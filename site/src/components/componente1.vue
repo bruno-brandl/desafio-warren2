@@ -18,7 +18,7 @@
           ></path>
         </svg>
         <ul>
-          <router-link to="/about"><a class="menu">Menu1</a></router-link>
+          <router-link to="/CadastroLogin"><a class="menu">Menu1</a></router-link>
 
           <div class="dropdown">
             <a class="dropbtn">Menu2</a>

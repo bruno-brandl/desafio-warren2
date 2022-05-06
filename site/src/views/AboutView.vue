@@ -79,7 +79,7 @@
 import HelloWorld from "../components/HelloWorld.vue";
 
 export default({
-  name: "CadastroLogin",
+  name: "/CadastroLogin",
   components: {
     HelloWorld,
   },

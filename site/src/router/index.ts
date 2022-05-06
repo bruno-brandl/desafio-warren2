@@ -26,14 +26,7 @@ const routes: Array<RouteConfig> = [
     // which is lazy-loaded when the route is visited.
     component: () => import('../views/endereco.vue')
   },
-  {
-    path: '/TelaFinal',
-    name: '/TelaFinal',
-    // route level code-splitting
-    // this generates a separate chunk (About.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import('../views/telafinal.vue')
-  }
+
 ]
 
 const router = new VueRouter({

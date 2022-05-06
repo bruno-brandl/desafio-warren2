@@ -1,5 +1,5 @@
 <template>
-  <hello-world />
+ 
   <div id="contents">
     <div id="photo">
             <img src="../assets/Capturar.png" class="photo" />
@@ -53,13 +53,9 @@
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue'
 export default {
-  name: 'endereco',
-  components: {
-    HelloWorld,
-    
-  }
+  name: 'endereco-oi',
+
 }
 </script>
 
