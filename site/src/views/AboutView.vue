@@ -29,7 +29,7 @@
           <label>Confirmar e-mail</label>
         </div>
         <div id="email">
-          <input id="email" type="email" class="mediumInput" />
+          <input v-model="email" type="email" class="mediumInput" />
           <input id="2" type="email" class="mediumInput paddingInput" />
         </div>
         <div id="labelNumbers">
@@ -65,7 +65,7 @@
       </p>
       <br />
       <div id="button">
-       <router-link to="/endereco"><button v-on:click = "oi()" class="btn next1">Continuar</button></router-link> 
+       <router-link to=""><button v-on:click = "oi()" class="btn next1">Continuar</button></router-link> 
       </div>
       <form id="form2" hidden>
        
@@ -84,14 +84,6 @@ export default({
   components: {
     HelloWorld,
     
-  },
-    methods: {
-    oi:function(){
-     const email = document.getElementById("email")
-     if(email ==  null){
-       alert("erro")
-     }
-    }
   },
 });
 

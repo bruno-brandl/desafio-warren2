@@ -6,7 +6,8 @@
        <router-link to="/">   <img class="logo" src="../assets/icon.png" alt="">  </router-link>
                  
                  <h1 class="text">Formulario</h1>
-              
+           <button v-on:click = "oi"> dsad</button>
+           <input v-model="ema" type="text">
             </div>
   
 
@@ -15,8 +16,25 @@
 </template>
 <script>
 export default {
-        name: 'PrimeiroComponente'
-}
+        name: 'PrimeiroComponente',
+        
+      data() {
+        return {
+          ema: ''
+          
+        }
+      },
+
+    methods: {
+    oi:function(){
+    if(this.ema === this.ema){
+      alert("erro")
+    }
+    }
+  },
+};
+
+
 </script>
 <style scoped>
 
