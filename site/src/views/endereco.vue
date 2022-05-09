@@ -1,18 +1,20 @@
 <template>
- 
+     <div class="principal">    
+       <nav-endereco/>
   <div id="contents">
+
     <div id="photo">
             <img src="../assets/Capturar.png" class="photo" />
 
     </div>
- 
+  <div>
     <div id="centralBox">
       <form id="form1">
         <br />
         <div id="texts">
          
           <br />
-          <h2 class="subtitle">Enderço </h2>
+          <h2 class="subtitle">Endereço </h2>
           <br />
           <p class="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Orci,
@@ -46,22 +48,35 @@
         <div id="button">
           <router-link to="/telafinal" ><button class="btn next2">Continuar</button> </router-link>
        
-        </div>
-      </form>
-    </div>
+     </div>
+    </form>
+   </div>
   </div>
+ </div> 
+ </div>
 </template>
 
 <script>
+import NavEndereco from '../components/endereconav.vue'
 export default {
   name: 'endereco-oi',
+  components:{
+    NavEndereco
+  }
 
 }
-</script>
+
+  </script>
 
 <style>
 * {
   color: black;
+}
+.principal{
+  margin-right: 204px;
+}
+#texts{
+  margin-right: -14px;
 }
 .test{
   display: inline-flex;
@@ -72,7 +87,7 @@ export default {
 width: 428px;
 position: absolute;
 right: 0px;
-top: 93px;
+top: 90px;
   
 }
 #contents {

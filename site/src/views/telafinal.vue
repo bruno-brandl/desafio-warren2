@@ -1,6 +1,8 @@
 <template>
-  <img  src="../assets/ok.png">
-  <final/>
+  <div>
+      <img  src="../assets/ok.png">
+      <final />
+  </div>
 </template>
 
 <script>

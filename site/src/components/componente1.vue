@@ -31,7 +31,7 @@
           <a class="menu" href="#">Menu3</a>
           <a class="menu" href="#">Menu4</a>
           <a class="menu" href="#">Menu5</a>
-      <router-link to="/about"> <a class="botao" href="#">BUTTON</a></router-link>  
+      <router-link to="/CadastroLogin"> <a class="botao" href="#">BUTTON</a></router-link>  
         </ul>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <componente1 />
+    <Componente1 />
     <section>
       <div class="container-banner">
         <div class="text-h-1">
@@ -9,7 +9,7 @@
             <h2>Descubra seu perfil, crie objetivos e comece a investir</h2>
             <br />
           </div>
-     <router-link to="/about"> <button class="botao2">Criar Conta</button></router-link>    
+     <router-link to="/CadastroLogin"> <button class="botao2">Criar Conta</button></router-link>    
         </div>
       </div>
     </section>
@@ -56,8 +56,8 @@
     </div>
     <br />
     <br />
-      <componente2 />
-  <componente3 />
+      <Componente2 />
+  <Componente3 />
   </div>
 
 
@@ -66,15 +66,15 @@
 
 
 <script>
-import componente1 from "../components/componente1.vue";
-import componente2 from "../components/componente2.vue";
-import componente3 from "../components/componente3.vue";
+import Componente1 from "../components/componente1.vue";
+import Componente2 from "../components/componente2.vue";
+import Componente3 from "../components/componente3.vue";
 export default {
   name: "HomeVue",
   components: {
-    componente1,
-    componente2,
-    componente3,
+    Componente1,
+    Componente2,
+    Componente3,
   },
 };
   

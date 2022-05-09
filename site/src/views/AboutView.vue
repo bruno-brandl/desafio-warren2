@@ -1,5 +1,6 @@
 <template>
-  <div> <hello-world />
+  <div>
+ <hello-world />
   <div id="contents">
    
     <div id="photo">
@@ -28,7 +29,7 @@
           <label>Confirmar e-mail</label>
         </div>
         <div id="email">
-          <input id="1" type="email" class="mediumInput" />
+          <input id="email" type="email" class="mediumInput" />
           <input id="2" type="email" class="mediumInput paddingInput" />
         </div>
         <div id="labelNumbers">
@@ -64,7 +65,7 @@
       </p>
       <br />
       <div id="button">
-       <router-link to="/endereco"><button vc class="btn next1">Continuar</button></router-link> 
+       <router-link to="/endereco"><button v-on:click = "oi()" class="btn next1">Continuar</button></router-link> 
       </div>
       <form id="form2" hidden>
        
@@ -77,11 +78,20 @@
 <script lang="ts">
 
 import HelloWorld from "../components/HelloWorld.vue";
-
+ alert("Por Favor Preencha os Campos Corretamente")
 export default({
   name: "/CadastroLogin",
   components: {
     HelloWorld,
+    
+  },
+    methods: {
+    oi:function(){
+     const email = document.getElementById("email")
+     if(email ==  null){
+       alert("erro")
+     }
+    }
   },
 });
 
@@ -197,14 +207,19 @@ border-bottom: solid 2px #ea1d61;
   width: 100px;
 }
 .btn {
-  font-size: 20px;
-  padding: 10px 55px;
-  border: 0px;
-  border-radius: 30px;
-  color: white;
-  background-color: rgb(255, 20, 106);
-  cursor: pointer;
-  border-bottom: solid 2px #ff0054;
+font-size: 20px;
+padding: 10px 55px;
+border: 0px;
+  border-bottom-color: currentcolor;
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+border-radius: 9px;
+color: white;
+background-color: rgb(255, 20, 106);
+cursor: pointer;
+border-bottom: solid 2px #ff0054;
+margin-top: 36px;
+margin-left: 36px;
 }
 .btn:hover {
   background-color: rgba(255, 20, 106, 0.616);
