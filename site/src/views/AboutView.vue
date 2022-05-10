@@ -23,13 +23,13 @@
         </div>
         <label>Nome completo</label>
         <br />
-        <input type="text" class="bigInput" required />
+        <input type="text"   placeholder='     Seu nome' class="bigInput" required />
         <div id="labelEmail">
           <label>E-mail</label>
           <label>Confirmar e-mail</label>
         </div>
         <div id="email">
-          <input v-model="ema" type="email" class="mediumInput" />
+          <input v-model="ema"  type="email" class="mediumInput" />
           <input v-model="ema2"  type="email" class="mediumInput paddingInput" />
         </div>
         <div id="labelNumbers">
@@ -37,8 +37,8 @@
           <label>Celular</label>
         </div>
         <div id="numbers">
-          <input v-model="cpf" type="number" class="mediumInput" />
-          <input type="number" class="mediumInput paddingInput" />
+          <input v-model="cpf"  placeholder='     Seu CPF'  type="number" class="mediumInput" />
+          <input type="number"  placeholder='     Seu Celular'  class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
         <br />
