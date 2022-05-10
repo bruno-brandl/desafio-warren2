@@ -3,11 +3,9 @@
         <div class="navbar">
       
             <div class="nav-container">
-       <router-link to="/">   <img class="logo" src="../assets/icon.png" alt="">  </router-link>
-                 
-                 <h1 class="text">Formulario</h1>
-           <button v-on:click = "oi"> dsad</button>
-           <input v-model="ema" type="text">
+       <router-link to="/"><img class="logo" src="../assets/icon.png" alt="">  </router-link>
+                 <h1 class="text">Cadastro</h1>
+
             </div>
   
 
@@ -17,22 +15,8 @@
 <script>
 export default {
         name: 'PrimeiroComponente',
-        
-      data() {
-        return {
-          ema: ''
-          
-        }
-      },
-
-    methods: {
-    oi:function(){
-    if(this.ema === this.ema){
-      alert("erro")
+  
     }
-    }
-  },
-};
 
 
 </script>

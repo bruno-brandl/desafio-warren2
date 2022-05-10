@@ -29,15 +29,15 @@
           <label>Confirmar e-mail</label>
         </div>
         <div id="email">
-          <input v-model="email" type="email" class="mediumInput" />
-          <input id="2" type="email" class="mediumInput paddingInput" />
+          <input v-model="ema" type="email" class="mediumInput" />
+          <input v-model="ema2"  type="email" class="mediumInput paddingInput" />
         </div>
         <div id="labelNumbers">
           <label>Cpf</label>
           <label>Celular</label>
         </div>
         <div id="numbers">
-          <input type="number" class="mediumInput" />
+          <input v-model="cpf" type="number" class="mediumInput" />
           <input type="number" class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
@@ -65,7 +65,7 @@
       </p>
       <br />
       <div id="button">
-       <router-link to=""><button v-on:click = "oi()" class="btn next1">Continuar</button></router-link> 
+   <button v-on:click = "oi" class="btn next1">Continuar</button>
       </div>
       <form id="form2" hidden>
        
@@ -75,16 +75,35 @@
   </div>
   </div>
 </template>
-<script lang="ts">
+<script>
 
 import HelloWorld from "../components/HelloWorld.vue";
- alert("Por Favor Preencha os Campos Corretamente")
+import router     from "../router/index"
 export default({
-  name: "/CadastroLogin",
+  name: "CadastroLogin",
   components: {
     HelloWorld,
     
   },
+  data() {
+    return {
+          ema:'' + '@gmail.com',
+          ema2: '' + '@gmail.com',
+          cpf: ''
+          
+    }
+  },
+     methods: {
+       oi:function(){
+        if(this.ema == this.ema2 && this.ema != (''+ "@gmail.com") && this.ema2 != ('' + "@gmail.com")){
+                  this.$router.push('/endereco');
+        } if (this.cpf != 0){
+          alert("oi")
+        }
+        
+       }
+     },
+  
 });
 
 
@@ -101,12 +120,11 @@ input[type="number"] {
   appearance: textfield;
 }
 .photo {
-  height: 130vh;
-  width: 507px;
-  position: absolute;
-  right: 0px;
-  top: 89px;
-  
+height: 130vh;
+width: 476px;
+position: absolute;
+right: 0px;
+top: 90px;
 }
 #contents {
   display: flex;
