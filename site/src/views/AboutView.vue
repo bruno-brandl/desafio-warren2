@@ -38,7 +38,7 @@
         </div>
         <div id="numbers">
           <input v-model="cpf" autocomplete="off" maxlength="14"  placeholder='     Seu CPF'  type="text" class="mediumInput" />
-          <input type="text" v-model="telefone" autocomplete="off" maxlength="14"  placeholder='(47)000000000'  class="mediumInput paddingInput" />
+          <input type="text" v-model="telefone" autocomplete="off" maxlength="14"   placeholder='(47)000000000'  class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
         <br />
@@ -87,17 +87,17 @@ export default({
   },
   data() {
     return {
-          ema:'' + '@gmail.com',
-          ema2: '' + '@gmail.com',
+          ema:'' ,
+          ema2: '' ,
           cpf: '',
           nome: '', 
-          telefone:"55 " + '',
+          telefone:'9844-24263',
           date: ""
     }
   },
      methods: {
        oi:function(){
-        if(this.ema == this.ema2 && this.ema != (''+ "@gmail.com") && this.ema2 != ('' + "@gmail.com") && this.cpf != "" && this.cpf >= 100 && this.nome != ""  && this.telefone != ""  &&  this.date != ""){
+        if(this.ema == this.ema2 && this.ema == (''+ "@gmail.com") || this.ema == (''+ "@yahoo.com") || this.ema == (''+ "@hotmail.com") && this.ema2 == ('' + "@ .com") && this.cpf != "" && this.cpf >= 100 && this.nome != ""  && this.telefone != ""  &&  this.date != ""){
                   this.$router.push('/endereco');
         } else {
           alert("Preencha os Campos Corretamente 😄 😁 ")
@@ -178,7 +178,7 @@ top: 90px;
 input {
   margin-bottom: 20px;
   margin-top: 0px;
-border-bottom: solid 2px #ea1d61;
+
 }
 .bigInput {
   height: 40px;
@@ -255,7 +255,6 @@ border-radius: 9px;
 color: white;
 background-color: rgb(255, 20, 106);
 cursor: pointer;
-border-bottom: solid 2px #ff0054;
 margin-top: 36px;
 margin-left: 36px;
 }
