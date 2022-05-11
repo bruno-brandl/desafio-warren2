@@ -23,30 +23,30 @@
           <br />
         </div>
 
-        <div id="labelEmail">
+        <div id="labelresidencia">
           <label>Pais em que Reside</label>
           <label id="city">Cidade</label>
         </div>
-        <div id="email">
-          <input type="text" class="mediumInput" />
-          <input type="text" class="mediumInput paddingInput" />
+        <div id="pais">
+          <input v-model="pais" type="text" class="mediumInput" />
+          <input v-model="cidade" type="text" class="mediumInput paddingInput" />
         </div>
         <div id="labelNumbers">
           <label>CEP</label>
           <label>Endereço</label>
         </div>
         <div id="numbers">
-          <input type="text" class="mediumInput" />
-          <input type="text" class="mediumInput paddingInput" />
+          <input v-model="cep" type="text" class="mediumInput" />
+          <input v-model="endereco" type="text" class="mediumInput paddingInput" />
         </div>
                 <label>Numero</label>
         <br />
-        <input type="text" class="bigInput" required />
+        <input v-model="numero" type="text" class="bigInput" required />
        
 
         
         <div id="button">
-          <router-link to="/telafinal" ><button class="btn next2">Continuar</button> </router-link>
+         <button  v-on:click = "finalizar" class="btn next2">Continuar</button> 
        
      </div>
     </form>
@@ -61,11 +61,28 @@ import NavEndereco from '../components/endereconav.vue'
 export default {
   name: 'endereco-oi',
   components:{
-    NavEndereco
-  }
+    NavEndereco,
+    
+  },
+   data() {
+    return {
+     pais: '',
+     cidade:"",
+     cep:"",
+     endereco:'',
+     numero:'',
 
+    }
+  
+},
+ methods: {
+        finalizar:function(){
+          if(this.pais != '' && this.cidade != '' && this.cep){
+               this.$router.push('/TelaFinal');
+          }
+        }  
+      },
 }
-
   </script>
 
 <style>
@@ -130,7 +147,7 @@ border-bottom: solid 2px #ea1d61;
   border-radius: 5px;
   font-size: 20px;
 }
-#labelEmail {
+#labelresidencia {
   display: flex;
   justify-content: space-between;
   width: 410px;
@@ -140,7 +157,7 @@ border-bottom: solid 2px #ea1d61;
   justify-content: space-between;
   width: 340px;
 }
-#email {
+#pais {
   display: flex;
   justify-content: flex-start;
   

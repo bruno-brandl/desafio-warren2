@@ -23,7 +23,7 @@
         </div>
         <label>Nome completo</label>
         <br />
-        <input type="text"   placeholder='     Seu nome' class="bigInput" required />
+        <input type="text" v-model="nome"   placeholder='     Seu nome' class="bigInput" required />
         <div id="labelEmail">
           <label>E-mail</label>
           <label>Confirmar e-mail</label>
@@ -37,12 +37,12 @@
           <label>Celular</label>
         </div>
         <div id="numbers">
-          <input v-model="cpf"  placeholder='     Seu CPF'  type="number" class="mediumInput" />
-          <input type="number"  placeholder='     Seu Celular'  class="mediumInput paddingInput" />
+          <input v-model="cpf" autocomplete="off" maxlength="14"  placeholder='     Seu CPF'  type="text" class="mediumInput" />
+          <input type="text" v-model="telefone" autocomplete="off" maxlength="14"  placeholder='(47)000000000'  class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
         <br />
-        <input type="date" class="mediumInput" />
+        <input v-model="date" type="date" class="mediumInput" />
         <p class="bottonText">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </p>
@@ -89,23 +89,51 @@ export default({
     return {
           ema:'' + '@gmail.com',
           ema2: '' + '@gmail.com',
-          cpf: ''
-          
+          cpf: '',
+          nome: '', 
+          telefone:"55 " + '',
+          date: ""
     }
   },
      methods: {
        oi:function(){
-        if(this.ema == this.ema2 && this.ema != (''+ "@gmail.com") && this.ema2 != ('' + "@gmail.com")){
+        if(this.ema == this.ema2 && this.ema != (''+ "@gmail.com") && this.ema2 != ('' + "@gmail.com") && this.cpf != "" && this.cpf >= 100 && this.nome != ""  && this.telefone != ""  &&  this.date != ""){
                   this.$router.push('/endereco');
-        } if (this.cpf != 0){
-          alert("oi")
+        } else {
+          alert("Preencha os Campos Corretamente 😄 😁 ")
         }
-        
-       }
+          if (!this.$v.$invalid) {
+        this.$router.push("/endereco");
+      } else {
+        this.$v.$touch();
+      }
+   
      },
+    validarCPF(inputCPF) {
+      var soma = 0;
+      var i;
+      var resto;
   
-});
 
+      if (this.cpf == "" ) return false;
+      for (i = 1; i <= 9; i++)
+        soma = soma + parseInt(this.cpf.substring(i - 1, i)) * (11 - i);
+      resto = (soma * 10) % 11;
+
+      if (resto == 10 || resto == 11) resto = 0;
+      if (resto != parseInt(this.cpf.substring(9, 10))) return false;
+
+      soma = 0;
+      for (i = 1; i <= 10; i++)
+        soma = soma + parseInt(this.cpf.substring(i - 1, i)) * (12 - i);
+      resto = (soma * 10) % 11;
+
+      if (resto == 10 || resto == 11) resto = 0;
+      if (resto != parseInt(this.cpf.substring(10, 11))) return false;
+      return true;
+       },
+     },
+  })
 
 </script>
 <style scoped>

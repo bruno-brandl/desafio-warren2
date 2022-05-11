@@ -28,7 +28,7 @@
               <a href="#">Link 3</a>
             </div>
           </div>
-          <a class="menu" href="#">Menu3</a>
+          <a class="menu" href="#mainText1">Menu3</a>
           <a class="menu" href="#">Menu4</a>
           <a class="menu" href="#">Menu5</a>
       <router-link to="/CadastroLogin"> <a class="botao" href="#">BUTTON</a></router-link>  
