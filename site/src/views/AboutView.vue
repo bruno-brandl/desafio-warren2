@@ -32,11 +32,13 @@
         <div id="email">
           
           <input v-model="ema" required type="email" class="mediumInput" />
-          
-          <input v-model="ema2"  required type="email" class="mediumInput paddingInput" />
-        </div>
-              <span class="erro" ref="erro">Preencha o campo acima</span>
+                 
 
+          <input v-model="ema2"  required type="email" class="mediumInput paddingInput" />
+           
+        </div>
+              
+        <span class="erro" ref="erro">Preencha o campo acima</span>
         <span class="erro" ref="erro">Preencha o campo acima</span>
           </div>
         <div id="labelNumbers">
