@@ -10,10 +10,10 @@
       <form id="form1">
         <br />
         <div id="texts">
-          <h1 class="title">Seja bem-vindo</h1>
+       
       
           <br />
-          <h2 class="subtitle">Dados de contato</h2>
+          <h2 class="title">Dados de contato</h2>
           <br />
           <p class="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Orci,
@@ -23,26 +23,33 @@
         </div>
         <label>Nome completo</label>
         <br />
-        <input type="text" v-model="nome"   placeholder='     Seu nome' class="bigInput" required />
+        <input type="text" v-model="nome" required placeholder='     Seu nome' class="bigInput"  />
         <div id="labelEmail">
           <label>E-mail</label>
           <label>Confirmar e-mail</label>
         </div>
+        <div>
         <div id="email">
-          <input v-model="ema"  type="email" class="mediumInput" />
-          <input v-model="ema2"  type="email" class="mediumInput paddingInput" />
+          
+          <input v-model="ema" required type="email" class="mediumInput" />
+          
+          <input v-model="ema2"  required type="email" class="mediumInput paddingInput" />
         </div>
+              <span class="erro" ref="erro">Preencha o campo acima</span>
+
+        <span class="erro" ref="erro">Preencha o campo acima</span>
+          </div>
         <div id="labelNumbers">
           <label>Cpf</label>
           <label>Celular</label>
         </div>
         <div id="numbers">
-          <input v-model="cpf" autocomplete="off" maxlength="14"  placeholder='     Seu CPF'  type="text" class="mediumInput" />
-          <input type="text" v-model="telefone" autocomplete="off" maxlength="14"   placeholder='(47)000000000'  class="mediumInput paddingInput" />
+          <input v-model="cpf" autocomplete="off" maxlength="14"  required placeholder='     Seu CPF'  type="text" class="mediumInput" />
+          <input type="text" v-model="telefone" autocomplete="off"  required maxlength="14"   placeholder='(47)0000-00000'  class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
         <br />
-        <input v-model="date" type="date" class="mediumInput" />
+        <input v-model="date"  type="date" class="mediumInput" />
         <p class="bottonText">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </p>
@@ -73,6 +80,7 @@
       </form>
     </div>
   </div>
+
   </div>
 </template>
 <script>
@@ -91,47 +99,28 @@ export default({
           ema2: '' ,
           cpf: '',
           nome: '', 
-          telefone:'9844-24263',
-          date: ""
+          telefone: ' ',
+          date: "",
+          erro:'Campo invalido'
     }
   },
      methods: {
        oi:function(){
-        if(this.ema == this.ema2 && this.ema == (''+ "@gmail.com") || this.ema == (''+ "@yahoo.com") || this.ema == (''+ "@hotmail.com") && this.ema2 == ('' + "@ .com") && this.cpf != "" && this.cpf >= 100 && this.nome != ""  && this.telefone != ""  &&  this.date != ""){
+         let validate = [this.ema, this.ema2, this.cpf,this.nome, this.telefone, this.date ]
+         for (let index = 0; index < validate.length; index++) {
+            if(validate[index] == ""){
+              this.$refs.erro.style.display = 'block'
+            }
+           
+         }
+        if(this.ema == this.ema2 && this.cpf != "" && this.cpf >= 100 && this.nome != ""  && this.telefone != ""  &&  this.date != ""){
                   this.$router.push('/endereco');
         } else {
-          alert("Preencha os Campos Corretamente 😄 😁 ")
+          ("Preencha os Campos Corretamente 😄 😁 ")
         }
-          if (!this.$v.$invalid) {
-        this.$router.push("/endereco");
-      } else {
-        this.$v.$touch();
-      }
-   
+
+        
      },
-    validarCPF(inputCPF) {
-      var soma = 0;
-      var i;
-      var resto;
-  
-
-      if (this.cpf == "" ) return false;
-      for (i = 1; i <= 9; i++)
-        soma = soma + parseInt(this.cpf.substring(i - 1, i)) * (11 - i);
-      resto = (soma * 10) % 11;
-
-      if (resto == 10 || resto == 11) resto = 0;
-      if (resto != parseInt(this.cpf.substring(9, 10))) return false;
-
-      soma = 0;
-      for (i = 1; i <= 10; i++)
-        soma = soma + parseInt(this.cpf.substring(i - 1, i)) * (12 - i);
-      resto = (soma * 10) % 11;
-
-      if (resto == 10 || resto == 11) resto = 0;
-      if (resto != parseInt(this.cpf.substring(10, 11))) return false;
-      return true;
-       },
      },
   })
 
@@ -139,6 +128,10 @@ export default({
 <style scoped>
 * {
   color: black;
+}
+.erro{
+  display: none;
+  margin-bottom: 9px;
 }
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -180,46 +173,41 @@ input {
   margin-top: 0px;
 
 }
+.title{
+  border-left: solid 6px rgb(255, 0, 85) ;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+  font-size: 39px  ;
+}
 .bigInput {
   height: 40px;
   width: 528px;
   border-radius: 5px;
   font-size: 20px;
+  border: solid 2px black;
 }
 .mediumInput {
   height: 40px;
   width: 230px;
   border-radius: 5px;
   font-size: 20px;
+    border: solid 2px black;
 }
 #labelEmail {
   display: flex;
   justify-content: space-between;
   width: 410px;
 }
-#labelLogradouro1 {
-  display: flex;
-  justify-content: space-between;
-  width: 340px;
-}
+
 #email {
   display: flex;
   justify-content: flex-start;
   
 }
-#logradouro1 {
-  display: flex;
-  justify-content: flex-start;
-}
 #labelNumbers {
   display: flex;
   justify-content: space-between;
   width: 340px;
-}
-#labelLogradouro2 {
-  display: flex;
-  justify-content: space-between;
-  width: 355px;
 }
 #numbers {
   display: flex;
@@ -245,21 +233,22 @@ input {
   width: 100px;
 }
 .btn {
-font-size: 20px;
-padding: 10px 55px;
-border: 0px;
-  border-bottom-color: currentcolor;
-  border-bottom-style: none;
-  border-bottom-width: 0px;
+font-size: 23px;
+padding: 14px 112px;
+border: solid 2px rgb(223, 35, 60);
+  border-bottom-width: 2px;
+border-bottom-width: 0px;
 border-radius: 9px;
 color: white;
 background-color: rgb(255, 20, 106);
 cursor: pointer;
-margin-top: 36px;
-margin-left: 36px;
+margin-top: 17px;
+margin-left: 22px;
+
 }
 .btn:hover {
   background-color: rgba(255, 20, 106, 0.616);
+  border: solid 2px black;
 }
 #form2 {
   left: 450px;

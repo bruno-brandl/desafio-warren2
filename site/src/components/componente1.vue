@@ -18,20 +18,20 @@
           ></path>
         </svg>
         <ul>
-          <router-link to="/CadastroLogin"><a class="menu">Menu1</a></router-link>
+          <router-link to="/CadastroLogin"><a class="menu">Crie uma Conta</a></router-link>
 
           <div class="dropdown">
-            <a class="dropbtn">Menu2</a>
+            <a class="dropbtn">Curiosidades</a>
             <div class="dropdown-content">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
             </div>
           </div>
-          <a class="menu" href="#mainText1">Menu3</a>
-          <a class="menu" href="#">Menu4</a>
-          <a class="menu" href="#">Menu5</a>
-      <router-link to="/CadastroLogin"> <a class="botao" href="#">BUTTON</a></router-link>  
+          <a class="menu" href="#texto1">Aprenda</a>
+          <a class="menu" href="#texto2">Visite</a>
+          <a class="menu" href="#invista">Invista</a>
+      <router-link to="/CadastroLogin"> <a class="botao" href="#">Login</a></router-link>  
         </ul>
       </div>
     </div>

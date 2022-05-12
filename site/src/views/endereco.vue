@@ -28,16 +28,16 @@
           <label id="city">Cidade</label>
         </div>
         <div id="pais">
-          <input v-model="pais" type="text" class="mediumInput" />
-          <input v-model="cidade" type="text" class="mediumInput paddingInput" />
+          <input v-model="pais" type="text" class="mediumInput"  required />
+          <input v-model="cidade" type="text" class="mediumInput paddingInput"  required />
         </div>
         <div id="labelNumbers">
           <label>CEP</label>
           <label>Endereço</label>
         </div>
         <div id="numbers">
-          <input v-model="cep" type="text" class="mediumInput" />
-          <input v-model="endereco" type="text" class="mediumInput paddingInput" />
+          <input v-model="cep" type="text" class="mediumInput"  required />
+          <input v-model="endereco" type="text" class="mediumInput paddingInput"  required />
         </div>
                 <label>Numero</label>
         <br />

@@ -14,12 +14,13 @@
       </div>
     </section>
     <br />
-
+<div id="texto1">
     <div id="divMain">
       <div id="mainContents1">
         <div id="mainPhoto1">
           <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
         </div>
+        
         <div id="mainText1">
           <h2 id="mainTitle1">Loren Ipsum</h2>
           <p class="mainText1">
@@ -33,13 +34,14 @@
           </div>
         </div>
       </div>
+      </div>
       <br />
-      <br />
-      <br />
+      <div id='texto2'>
       <div id="mainContents2">
         <div id="mainPhoto2">
           <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
         </div>
+        
         <div id="mainText2">
           <h2 id="mainTitle2">Loren Ipsum</h2>
           <p class="mainText2">
@@ -54,10 +56,13 @@
         </div>
       </div>
     </div>
+    </div>
     <br />
-    <br />
+    <br /><div id="invista">
       <Componente2 />
-  <Componente3 />
+      </div>
+
+ <Componente3 />
   </div>
 
 
@@ -92,6 +97,7 @@ svg:hover {
 * {
   box-sizing: border-box;
   margin: 0;
+    scroll-behavior: smooth;
 }
 #divMain {
   height: 100vh;
@@ -179,7 +185,7 @@ justify-content: center;
 }
 .container-banner {
   width: 100%;
-  height: 580px;
+  height: 670px;
   background-color: #555555;
   font-family: "Source Sans Pro", sans-serif;
   padding: 100px 15%;
