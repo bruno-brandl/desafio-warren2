@@ -41,7 +41,7 @@
         </div>
                 <label>Numero</label>
         <br />
-        <input v-model="numero" type="text" class="bigInput" required />
+        <input v-model="numero"  type="text" class="bigInput" required />
        
 
         

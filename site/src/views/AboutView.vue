@@ -24,6 +24,7 @@
         <label>Nome completo</label>
         <br />
         <input type="text" v-model="nome" required placeholder='     Seu nome' class="bigInput"  />
+           <span class="erro" ref="erro">Preencha o campo acima</span>
         <div id="labelEmail">
           <label>E-mail</label>
           <label>Confirmar e-mail</label>
@@ -31,7 +32,7 @@
         <div>
         <div id="email">
           
-          <input v-model="ema" required type="email" class="mediumInput" />
+          <input v-model="ema" required type="text" class="mediumInput" />
                  
 
           <input v-model="ema2"  required type="email" class="mediumInput paddingInput" />
@@ -46,12 +47,12 @@
           <label>Celular</label>
         </div>
         <div id="numbers">
-          <input v-model="cpf" autocomplete="off" maxlength="14"  required placeholder='     Seu CPF'  type="text" class="mediumInput" />
-          <input type="text" v-model="telefone" autocomplete="off"  required maxlength="14"   placeholder='(47)0000-00000'  class="mediumInput paddingInput" />
+          <input v-maska="'###.###.###-##'" v-model="cpf" autocomplete="off" maxlength="14"  required placeholder='     Seu CPF'  type="text" class="mediumInput" />
+          <input v-maska="'(##) #####-#####' " type="text" v-model="telefone" autocomplete="off"  required maxlength="15" class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
         <br />
-        <input v-model="date"  type="date" class="mediumInput" />
+        <input v-model="date" type="date" class="mediumInput" />
         <p class="bottonText">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </p>
@@ -89,6 +90,7 @@
 
 import HelloWorld from "../components/HelloWorld.vue";
 import router     from "../router/index"
+                
 export default({
   name: "CadastroLogin",
   components: {
@@ -104,6 +106,7 @@ export default({
           telefone: ' ',
           date: "",
           erro:'Campo invalido'
+          
     }
   },
      methods: {
@@ -113,18 +116,37 @@ export default({
             if(validate[index] == ""){
               this.$refs.erro.style.display = 'block'
             }
-           
+ 
          }
-        if(this.ema == this.ema2 && this.cpf != "" && this.cpf >= 100 && this.nome != ""  && this.telefone != ""  &&  this.date != ""){
-                  this.$router.push('/endereco');
+     
+             var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        if (reg.test(this.ema)) {
+           this.$router.push('/endereco');
         } else {
-          ("Preencha os Campos Corretamente 😄 😁 ")
+          return false;
         }
-
-        
+            var Soma;
+        var Resto;
+        var i;
+        var strCPF = this.cpf;
+        Soma = 0;
+        if (strCPF == "00000000000") return false;
+        for (i = 1; i <= 9; i++)
+          Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+        Resto = (Soma * 10) % 11;
+        if (Resto == 10 || Resto == 11) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+        Soma = 0;
+        for (i = 1; i <= 10; i++)
+          Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+        Resto = (Soma * 10) % 11;
+        if (Resto == 10 || Resto == 11) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+        return true;
+      }
+      
      },
-     },
-  })
+})
 
 </script>
 <style scoped>
@@ -143,11 +165,12 @@ input[type="number"] {
   appearance: textfield;
 }
 .photo {
-height: 130vh;
-width: 476px;
+height: 150%;
+width: 418px;
 position: absolute;
 right: 0px;
 top: 90px;
+
 }
 #contents {
   display: flex;
@@ -194,6 +217,8 @@ input {
   border-radius: 5px;
   font-size: 20px;
     border: solid 2px black;
+        display: flex;
+    flex-direction: row-reverse;
 }
 #labelEmail {
   display: flex;
