@@ -2488,7 +2488,7 @@
     "browserslist" "^4.20.3"
     "semver" "7.0.0"
 
-"core-js@^3.8.3":
+"core-js@^3.6.5", "core-js@^3.8.3":
   "integrity" "sha512-1uLykR+iOfYja+6Jn/57743gc9n73EWiOnSJJ4ba3B4fOEYDBv25MagmEZBxTp5cWq4b/KPx/l77zgsp28ju4w=="
   "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.22.4.tgz"
   "version" "3.22.4"
@@ -6118,6 +6118,14 @@
     "hash-sum" "^2.0.0"
     "loader-utils" "^2.0.0"
 
+"vue-modal-service@^1.4.3":
+  "integrity" "sha512-YcTWHRRjjJHl54d9kt5JxQek9EEjgYr1dlg+zeBRp4ojbGVByIsWp53eKTUkTXc6GkFUf2IS19rnAxWm9tZPJQ=="
+  "resolved" "https://registry.npmjs.org/vue-modal-service/-/vue-modal-service-1.4.3.tgz"
+  "version" "1.4.3"
+  dependencies:
+    "core-js" "^3.6.5"
+    "vue" "^2.6.11"
+
 "vue-property-decorator@^9.1.2":
   "integrity" "sha512-xYA8MkZynPBGd/w5QFJ2d/NM0z/YeegMqYTphy7NJQXbZcuU6FC6AOdUAcy4SXP+YnkerC6AfH+ldg7PDk9ESQ=="
   "resolved" "https://registry.npmjs.org/vue-property-decorator/-/vue-property-decorator-9.1.2.tgz"
@@ -6149,7 +6157,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@*", "vue@^2 || ^3.2.13", "vue@^2.0.0", "vue@^2.5.16", "vue@^2.6.14", "vue@2.x":
+"vue@*", "vue@^2 || ^3.2.13", "vue@^2.0.0", "vue@^2.5.16", "vue@^2.6.11", "vue@^2.6.14", "vue@2.x":
   "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
   "version" "2.6.14"

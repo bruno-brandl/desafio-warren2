@@ -44,11 +44,12 @@ export default {
     background-color: #f03079;
     padding-top: 1rem;
     padding-bottom: 1rem; 
-    width: 1389px;
+        width: 1579px;
+}
     
    
     
-} 
+
 .nav-container{
     font-family: 'Source Sans Pro', sans-serif;
     justify-content: center;

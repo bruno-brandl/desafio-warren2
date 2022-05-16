@@ -1,6 +1,6 @@
 <template>
   <div>
- <hello-world />
+ <navbar/>
   <div id="contents">
    
     <div id="photo">
@@ -11,7 +11,7 @@
         <br />
         <div id="texts">
        
-      
+            
           <br />
           <h2 class="title">Dados de contato</h2>
           <br />
@@ -23,7 +23,7 @@
         </div>
         <label>Nome completo</label>
         <br />
-        <input type="text" v-model="nome" required placeholder='     Seu nome' class="bigInput"  />
+        <input  type="text" v-model="nome" required placeholder='     Seu nome' class="bigInput"  />
            <span class="erro" ref="erro">Preencha o campo acima</span>
         <div id="labelEmail">
           <label>E-mail</label>
@@ -38,9 +38,6 @@
           <input v-model="ema2"  required type="email" class="mediumInput paddingInput" />
            
         </div>
-              
-        <span class="erro" ref="erro">Preencha o campo acima</span>
-        <span class="erro" ref="erro">Preencha o campo acima</span>
           </div>
         <div id="labelNumbers">
           <label>Cpf</label>
@@ -76,37 +73,46 @@
       <br />
       <div id="button">
    <button v-on:click = "oi" class="btn next1">Continuar</button>
-      </div>
-      <form id="form2" hidden>
-       
+  
+         <div id="modal" class="modal">
+    <div class="modal-content">
+
+          <p>Nome:Bruno</p>
+          <p>Email:bruno@gmail.com</p>  
+          <p>cpf:111.222.333-44</p>
+          <p>Telefone:(11) 11111-1111</p>
+          </div>
+        </div>
       
-      </form>
+      </div>
     </div>
   </div>
 
   </div>
 </template>
+
 <script>
 
-import HelloWorld from "../components/HelloWorld.vue";
+import navbar from "../components/navbar.vue";
 import router     from "../router/index"
+import enderecoVue from "./endereco.vue";
                 
 export default({
   name: "CadastroLogin",
   components: {
-    HelloWorld,
+    navbar,
     
   },
   data() {
-    return {
-          ema:'' ,
-          ema2: '' ,
-          cpf: '',
-          nome: '', 
-          telefone: ' ',
-          date: "",
+       return{
+          ema:'',
+          ema2:'',
+          cpf:'',
+          nome:'', 
+          telefone:'',
+          date:"",
           erro:'Campo invalido'
-          
+     
     }
   },
      methods: {
@@ -118,13 +124,14 @@ export default({
             }
  
          }
-     
-             var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-        if (reg.test(this.ema)) {
-           this.$router.push('/endereco');
-        } else {
-          return false;
-        }
+         if(this.ema == " @ .com" && this.ema == this.ema2  && this.nome != null){
+          this.ema = StorageEvent
+              this.$router.push('/endereco')
+              } 
+
+ 
+ 
+        
             var Soma;
         var Resto;
         var i;
@@ -144,11 +151,15 @@ export default({
         if (Resto != parseInt(strCPF.substring(10, 11))) return false;
         return true;
       }
-      
-     },
+    
+    },
+     
+     
 })
 
+
 </script>
+
 <style scoped>
 * {
   color: black;
@@ -179,7 +190,7 @@ top: 90px;
 }
 #centralBox {
   height: 800px;
-  width: 1100px;
+    width: 947px;
   display: flex;
   flex-direction: column;
 }
@@ -280,5 +291,19 @@ margin-left: 22px;
 #form2 {
   left: 450px;
 }
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+   overflow: auto; 
+  background-color: rgb(0,0,0);  
+}
+
+
 
 </style>

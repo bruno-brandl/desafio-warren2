@@ -34,8 +34,9 @@
           </div>
         </div>
       </div>
+      
       </div>
-      <br />
+  
       <div id='texto2'>
       <div id="mainContents2">
         <div id="mainPhoto2">
@@ -71,9 +72,9 @@
 
 
 <script>
-import Componente1 from "../components/componente1.vue";
-import Componente2 from "../components/componente2.vue";
-import Componente3 from "../components/componente3.vue";
+import Componente1 from "../components/navigation.vue";
+import Componente2 from "../components/invista.vue";
+import Componente3 from "../components/footer.vue";
 export default {
   name: "HomeVue",
   components: {
@@ -85,7 +86,7 @@ export default {
   
 </script>
 
-<style>
+<style scooped>
 svg {
   cursor: pointer;
 }
@@ -119,6 +120,8 @@ svg:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-top: 10%;
+
 }
 #mainTitle1 {
   font-size: 40px;
@@ -129,6 +132,9 @@ svg:hover {
   font-size: 20px;
   color: black;
   border-bottom: solid 3px rgb(255, 0, 89);
+}
+#border{
+  border-bottom: solid 7px rgb(249, 30, 132);
 }
 .mainButton1 {
   font-size: 20px;

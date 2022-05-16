@@ -58,6 +58,7 @@
 
 <script>
 import NavEndereco from '../components/endereconav.vue'
+import email from './AboutView.vue'
 export default {
   name: 'endereco-oi',
   components:{
@@ -72,13 +73,14 @@ export default {
      endereco:'',
      numero:'',
 
-    }
-  
+  }
+
 },
  methods: {
+        
         finalizar:function(){
           if(this.pais != '' && this.cidade != '' && this.cep){
-               this.$router.push('/TelaFinal');
+           console.log.$push.StorageEvent
           }
         }  
       },
@@ -97,7 +99,7 @@ export default {
 }
 .test{
   display: inline-flex;
-  border-bottom: solid 1px magenta;
+  border-bottom: solid 1px rgb(0, 0, 0);
 }
 .photo {
   height: 125vh;
@@ -132,7 +134,7 @@ top: 90px;
 input {
   margin-bottom: 20px;
   margin-top: 0px;
-border-bottom: solid 2px #ea1d61;
+border-bottom: solid 2px #000000;
 
 }
 .bigInput {
