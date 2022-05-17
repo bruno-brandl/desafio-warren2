@@ -44,7 +44,7 @@
           <label>Celular</label>
         </div>
         <div id="numbers">
-          <input v-maska="'###.###.###-##'" v-model="cpf" autocomplete="off" maxlength="14"  required placeholder='     Seu CPF'  type="text" class="mediumInput" />
+          <input v-validate="14" v-maska="'###.###.###-##'" v-model="cpf" autocomplete="off" maxlength="14"  required placeholder='     Seu CPF'  type="text" class="mediumInput" />
           <input v-maska="'(##) #####-#####' " type="text" v-model="telefone" autocomplete="off"  required maxlength="15" class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
@@ -72,18 +72,8 @@
       </p>
       <br />
       <div id="button">
-   <button v-on:click = "oi" class="btn next1">Continuar</button>
-  
-         <div id="modal" class="modal">
-    <div class="modal-content">
+   <button v-on:click = "validar" class="btn next1">Continuar</button>
 
-          <p>Nome:Bruno</p>
-          <p>Email:bruno@gmail.com</p>  
-          <p>cpf:111.222.333-44</p>
-          <p>Telefone:(11) 11111-1111</p>
-          </div>
-        </div>
-      
       </div>
     </div>
   </div>
@@ -96,6 +86,7 @@
 import navbar from "../components/navbar.vue";
 import router     from "../router/index"
 import enderecoVue from "./endereco.vue";
+import modal from "../components/modalFinal.vue"
                 
 export default({
   name: "CadastroLogin",
@@ -116,7 +107,7 @@ export default({
     }
   },
      methods: {
-       oi:function(){
+       validar:function(){
          let validate = [this.ema, this.ema2, this.cpf,this.nome, this.telefone, this.date ]
          for (let index = 0; index < validate.length; index++) {
             if(validate[index] == ""){
@@ -124,37 +115,21 @@ export default({
             }
  
          }
-         if(this.ema == " @ .com" && this.ema == this.ema2  && this.nome != null){
-          this.ema = StorageEvent
-              this.$router.push('/endereco')
+         if(this.ema == " @ .com" && this.ema == this.ema2  ){
+           this.$router.push('/endereco')
+           
+          
               } 
 
  
  
         
-            var Soma;
-        var Resto;
-        var i;
-        var strCPF = this.cpf;
-        Soma = 0;
-        if (strCPF == "00000000000") return false;
-        for (i = 1; i <= 9; i++)
-          Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
-        Resto = (Soma * 10) % 11;
-        if (Resto == 10 || Resto == 11) Resto = 0;
-        if (Resto != parseInt(strCPF.substring(9, 10))) return false;
-        Soma = 0;
-        for (i = 1; i <= 10; i++)
-          Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
-        Resto = (Soma * 10) % 11;
-        if (Resto == 10 || Resto == 11) Resto = 0;
-        if (Resto != parseInt(strCPF.substring(10, 11))) return false;
-        return true;
-      }
+ 
     
     },
      
      
+     }
 })
 
 
@@ -180,17 +155,18 @@ height: 150%;
 width: 418px;
 position: absolute;
 right: 0px;
-top: 90px;
+top: 74px;
 
 }
 #contents {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 84px;
 }
 #centralBox {
   height: 800px;
-    width: 947px;
+  width: 947px;
   display: flex;
   flex-direction: column;
 }
@@ -199,11 +175,7 @@ top: 90px;
   right: -450;
   
   }
-#form2 {
-  position: absolute;
-  z-index: 2;
-  
-}
+
 input {
   margin-bottom: 20px;
   margin-top: 0px;
@@ -227,9 +199,9 @@ input {
   width: 230px;
   border-radius: 5px;
   font-size: 20px;
-    border: solid 2px black;
-        display: flex;
-    flex-direction: row-reverse;
+  border: solid 2px black;
+  display: flex;
+  flex-direction: row-reverse;
 }
 #labelEmail {
   display: flex;
@@ -280,7 +252,7 @@ border-radius: 9px;
 color: white;
 background-color: rgb(255, 20, 106);
 cursor: pointer;
-margin-top: 17px;
+margin-top: -6 px;
 margin-left: 22px;
 
 }
@@ -290,18 +262,6 @@ margin-left: 22px;
 }
 #form2 {
   left: 450px;
-}
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  padding-top: 100px; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-   overflow: auto; 
-  background-color: rgb(0,0,0);  
 }
 
 

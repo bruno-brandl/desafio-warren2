@@ -44,7 +44,7 @@ export default {
 .navbar{
     background-color: #f03079;
     padding-top: 1rem;
-    padding-bottom: 1rem; 
+    padding-bottom: 0rem; 
     width: 100%;
     
    

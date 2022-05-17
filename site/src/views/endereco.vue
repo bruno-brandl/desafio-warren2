@@ -47,7 +47,7 @@
         
         <div id="button">
          <button  v-on:click = "finalizar" class="btn next2">Continuar</button> 
-       
+       <modalFinal/>
      </div>
     </form>
    </div>
@@ -59,10 +59,12 @@
 <script>
 import NavEndereco from '../components/endereconav.vue'
 import email from './AboutView.vue'
+import modalFinal from "../components/modalFinal.vue"
 export default {
   name: 'endereco-oi',
   components:{
     NavEndereco,
+    modalFinal,
     
   },
    data() {
@@ -80,7 +82,8 @@ export default {
         
         finalizar:function(){
           if(this.pais != '' && this.cidade != '' && this.cep){
-           console.log.$push.StorageEvent
+           console.$push.StorageEvent
+          
           }
         }  
       },
