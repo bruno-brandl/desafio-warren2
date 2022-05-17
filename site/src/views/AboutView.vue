@@ -44,8 +44,8 @@
           <label>Celular</label>
         </div>
         <div id="numbers">
-          <input v-validate="14" v-maska="'###.###.###-##'" v-model="cpf" autocomplete="off" maxlength="14"  required placeholder='     Seu CPF'  type="text" class="mediumInput" />
-          <input v-maska="'(##) #####-#####' " type="text" v-model="telefone" autocomplete="off"  required maxlength="15" class="mediumInput paddingInput" />
+          <input v-validate="14" v-maska="'###.###.###-##'" v-model="cpf" autocomplete="off" maxlength="14" minlength="14"                                  required placeholder='     Seu CPF'  type="text" class="mediumInput" />
+          <input v-maska="'(##) #####-#####' " type="text" v-model="telefone" autocomplete="off"  required maxlength="15" minlength="14" class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
         <br />
@@ -116,16 +116,14 @@ export default({
  
          }
          if(this.ema == " @ .com" && this.ema == this.ema2  ){
-           this.$router.push('/endereco')
-           
-          
-              } 
+          this.$router.push('/endereco')
+         } 
+              var Soma;
+              var Resto;
+              Soma = 0;
+              
 
- 
- 
-        
- 
-    
+
     },
      
      
