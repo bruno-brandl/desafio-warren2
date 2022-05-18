@@ -108,8 +108,24 @@ export default({
   },
      methods: {
        validar:function(){
-        if( this.ema == this.ema2 && this.ema != ""){
-        
+         if(this.nome == ""){
+           alert("Por Favor Informe seu Nome")
+         }
+           if(this.ema == ""){
+           alert("Por Favor Informe se email")
+         }
+           if(this.ema2 == "" && this.ema2 != this.ema){
+           alert("Os email devem ser iguais")
+         }
+           if(this.cpf == ""){
+           alert("Por Favor Informe seu CPF")
+         }
+           if(this.telefone == ""){
+           alert("Por Favor Informe seu Telefone")
+         }
+        if( this.ema == this.ema2 && this.ema != null && this.cpf != "" ){
+       
+              this.$router.push('/endereco')
         var Soma;
         var Resto;
         var i;
@@ -127,14 +143,12 @@ export default({
         Resto = (Soma * 10) % 11;
         if (Resto == 10 || Resto == 11) Resto = 0;
         if (Resto != parseInt(strCPF.substring(10, 11))) return false;
-        this.$router.push('/endereco')
+  
         
         if(this.cpf == "999999999"){
           alert("erro")
         }
         return true;
-       }   else{
-         alert("Preencha os campos corretamente")
        }
       } 
     },
