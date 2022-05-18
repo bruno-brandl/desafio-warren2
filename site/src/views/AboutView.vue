@@ -44,7 +44,7 @@
           <label>Celular</label>
         </div>
         <div id="numbers">
-          <input  v-maska="'###.###.###-##'" v-model="cpf" maxlength="14" required placeholder='     Seu CPF'  type="text" class="mediumInput" />
+          <input v-maska="'###.###.###-##'" v-model="cpf" maxlength="14" required placeholder='     Seu CPF'  type="text" class="mediumInput" />
           <input v-maska="'(##) #####-#####' " type="text" v-model="telefone" autocomplete="off"  required maxlength="15" minlength="14" class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
@@ -111,21 +111,21 @@ export default({
          if(this.nome == ""){
            alert("Por Favor Informe seu Nome")
          }
-           if(this.ema == ""){
+         else if(this.ema == ""){
            alert("Por Favor Informe se email")
          }
-           if(this.ema2 == "" && this.ema2 != this.ema){
+          else if(this.ema2 == "" && this.ema2 != this.ema){
            alert("Os email devem ser iguais")
          }
-           if(this.cpf == ""){
+          else if(this.cpf == ""){
            alert("Por Favor Informe seu CPF")
          }
-           if(this.telefone == ""){
+         else if(this.telefone == ""){
            alert("Por Favor Informe seu Telefone")
          }
-        if( this.ema == this.ema2 && this.ema != null && this.cpf != "" ){
-       
-              this.$router.push('/endereco')
+        if( this.ema == this.ema2  ){
+     
+        this.$router.push('/endereco')
         var Soma;
         var Resto;
         var i;
