@@ -44,7 +44,7 @@
           <label>Celular</label>
         </div>
         <div id="numbers">
-          <input v-validate="14" v-maska="'###.###.###-##'" v-model="cpf" autocomplete="off" maxlength="14" minlength="14"                                  required placeholder='     Seu CPF'  type="text" class="mediumInput" />
+          <input  v-maska="'###.###.###-##'" v-model="cpf" maxlength="14" required placeholder='     Seu CPF'  type="text" class="mediumInput" />
           <input v-maska="'(##) #####-#####' " type="text" v-model="telefone" autocomplete="off"  required maxlength="15" minlength="14" class="mediumInput paddingInput" />
         </div>
         <label>Data de nascimento</label>
@@ -86,7 +86,7 @@
 import navbar from "../components/navbar.vue";
 import router     from "../router/index"
 import enderecoVue from "./endereco.vue";
-import modal from "../components/modalFinal.vue"
+
                 
 export default({
   name: "CadastroLogin",
@@ -108,29 +108,38 @@ export default({
   },
      methods: {
        validar:function(){
-         let validate = [this.ema, this.ema2, this.cpf,this.nome, this.telefone, this.date ]
-         for (let index = 0; index < validate.length; index++) {
-            if(validate[index] == ""){
-              this.$refs.erro.style.display = 'block'
-            }
- 
-         }
-         if(this.ema == " @ .com" && this.ema == this.ema2  ){
-          this.$router.push('/endereco')
-         } 
-              var Soma;
-              var Resto;
-              Soma = 0;
-              
-
-
+        if( this.ema == this.ema2 && this.ema != ""){
+        
+        var Soma;
+        var Resto;
+        var i;
+        var strCPF = this.cpf;
+        Soma = 0;
+        if (strCPF == "00000000000") return false;
+        for (i = 1; i <= 9; i++)
+          Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+        Resto = (Soma * 10) % 11;
+        if (Resto == 10 || Resto == 11) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+        Soma = 0;
+        for (i = 1; i <= 10; i++)
+          Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+        Resto = (Soma * 10) % 11;
+        if (Resto == 10 || Resto == 11) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+        this.$router.push('/endereco')
+        
+        if(this.cpf == "999999999"){
+          alert("erro")
+        }
+        return true;
+       }   else{
+         alert("Preencha os campos corretamente")
+       }
+      } 
     },
-     
-     
-     }
-})
-
-
+  }
+)
 </script>
 
 <style scoped>

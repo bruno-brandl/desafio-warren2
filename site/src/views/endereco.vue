@@ -42,7 +42,7 @@
                 <label>Numero</label>
         <br />
         <input v-model="numero"  type="text" class="bigInput" required />
-       
+
 
         
         <div id="button">
@@ -50,6 +50,28 @@
        
      </div>
     </form>
+
+ <div id="dv-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1>Meu modal com HTML</h1>
+            </div>
+
+            <div class="modal-body">
+                <p>Integer in augue felis. Quisque bibendum luctus sapien in egestas. Proin ullamcorper tempus eleifend.
+                    Sed at sollicitudin libero. Maecenas sodales condimentum sapien vel mattis. Nam lacinia risus vel
+                    nisl venenatis rhoncus. Duis sit amet massa maximus, mollis mi ac, pellentesque purus. Orci varius
+                    natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc dictum neque
+                    faucibus fringilla pellentesque. Phasellus malesuada aliquet augue. Mauris at eleifend risus, sit
+                    amet scelerisque augue.</p>
+
+                     </div>
+
+            <div class="modal-footer">
+                <button class="btn" onclick="closeModal('dv-modal')">Fechar</button>
+            </div>
+        </div>
+    </div>
    </div>
   </div>
  </div> 
@@ -78,13 +100,31 @@ export default {
 },
  methods: {
         
-        finalizar:function(){
+        finalizar:function(modal){
           if(this.pais != '' && this.cidade != '' && this.cep){
-           console.log.$push.StorageEvent
+              let modal = document.getElementById(modal);
+
+    if (typeof modal == 'undefined' || modal === null)
+        return;
+
+    modal.style.display = 'Block';
+    document.body.style.overflow = 'hidden';
            
           }
+          
+function closeModal(mn) {
+    let modal = document.getElementById(mn);
+
+    if (typeof modal == 'undefined' || modal === null)
+        return;
+
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
         }  
+        
       },
+      
 }
   </script>
 
@@ -195,4 +235,40 @@ border-bottom: solid 2px #000000;
   margin-right: 71px;
  
 }
+.modal {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.modal-content {
+    margin: 0 auto;
+    margin-top: 3%;
+    max-width: 600px;
+    background-color: #eee;
+    padding: 0;
+    box-shadow: 0 0 2px #fff;
+}
+
+.modal-header h1{
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-header, .modal-body, .modal-footer{
+    padding: 10px;
+}
+
+.modal-header{
+    background-color: #ccc;
+}
+
+.modal-footer{
+    background-color: #ccc;
+}
+
 </style>
