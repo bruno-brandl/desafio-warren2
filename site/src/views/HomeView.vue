@@ -9,61 +9,62 @@
             <h2>Descubra seu perfil, crie objetivos e comece a investir</h2>
             <br />
           </div>
-     <router-link to="/CadastroLogin"> <button class="botao2">Criar Conta</button></router-link>    
+          <router-link to="/CadastroLogin"> <button class="botao2">Criar Conta</button></router-link>
         </div>
       </div>
     </section>
     <br />
-<div id="texto1">
-    <div id="divMain">
-      <div id="mainContents1">
-        <div id="mainPhoto1">
-          <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
-        </div>
-        
-        <div id="mainText1">
-          <h2 id="mainTitle1">Loren Ipsum</h2>
-          <p class="mainText1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-            veritatis aut consequuntur iste dolore pariatur, quia, perferendis
-            doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
-            dolor veritatis unde nulla magni.
-          </p>
-          <div id="mainButton1">
-            <input type="button" value="Button" class="mainButton1" />
+    <div id="texto1">
+      <div id="divMain">
+        <div id="mainContents1">
+          <div id="mainPhoto1">
+            <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
+          </div>
+
+          <div id="mainText1">
+            <h2 id="mainTitle1">Loren Ipsum</h2>
+            <p class="mainText1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              veritatis aut consequuntur iste dolore pariatur, quia, perferendis
+              doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
+              dolor veritatis unde nulla magni.
+            </p>
+            <div id="mainButton1">
+              <input type="button" value="Button" class="mainButton1" />
+            </div>
           </div>
         </div>
-      </div>
-      
-      </div>
-  
-      <div id='texto2'>
-      <div id="mainContents2">
-        <div id="mainPhoto2">
-          <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
-        </div>
-        
-        <div id="mainText2">
-          <h2 id="mainTitle2">Loren Ipsum</h2>
-          <p class="mainText2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-            veritatis aut consequuntur iste dolore pariatur, quia, perferendis
-            doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
-            dolor veritatis unde nulla magni.
-          </p>
-          <div id="mainButton2">
-            <input type="button" value="Button" class="mainButton2" />
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    <br />
-    <br /><div id="invista">
-      <Componente2 />
+
       </div>
 
- <Componente3 />
+      <div id='texto2'>
+        <div id="mainContents2">
+          <div id="mainPhoto2">
+            <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
+          </div>
+
+          <div id="mainText2">
+            <h2 id="mainTitle2">Loren Ipsum</h2>
+            <p class="mainText2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              veritatis aut consequuntur iste dolore pariatur, quia, perferendis
+              doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
+              dolor veritatis unde nulla magni.
+            </p>
+            <div id="mainButton2">
+              <input type="button" value="Button" class="mainButton2" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div id="invista">
+      <Componente2 />
+    </div>
+
+    <Componente3 />
   </div>
 
 
@@ -83,37 +84,44 @@ export default {
     Componente3,
   },
 };
-  
+
 </script>
 
 <style scooped>
 svg {
   cursor: pointer;
 }
+
 svg:hover {
   -ms-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transform: scale(1.1);
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+
 }
+
 #divMain {
   height: 100vh;
 }
+
 #mainContents1 {
   height: 70vh;
   display: flex;
   align-items: center;
 }
+
 #mainPhoto1 {
   width: 60%;
   height: 143px;
   display: flex;
   justify-content: center;
 }
+
 #mainText1 {
   height: 50vh;
   width: 50%;
@@ -123,19 +131,23 @@ svg:hover {
   margin-top: 10%;
 
 }
+
 #mainTitle1 {
   font-size: 40px;
   color: black;
 }
+
 .mainText1 {
   width: 75%;
   font-size: 20px;
   color: black;
   border-bottom: solid 3px rgb(255, 0, 89);
 }
-#border{
+
+#border {
   border-bottom: solid 7px rgb(249, 30, 132);
 }
+
 .mainButton1 {
   font-size: 20px;
   padding: 10px 55px;
@@ -144,21 +156,25 @@ svg:hover {
   color: white;
   background-color: rgb(255, 20, 106);
 }
+
 .mainButton1:hover {
   background-color: rgba(255, 20, 106, 0.616);
 }
+
 #mainContents2 {
   height: 50vh;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
 }
+
 #mainPhoto2 {
-width: 60%;
-height: 296px;
-display: flex;
-justify-content: center; 
+  width: 60%;
+  height: 296px;
+  display: flex;
+  justify-content: center;
 }
+
 #mainText2 {
   height: 50vh;
   width: 50%;
@@ -168,16 +184,19 @@ justify-content: center;
   align-items: flex-end;
   text-align: end;
 }
+
 #mainTitle2 {
   font-size: 40px;
   color: black;
 }
+
 .mainText2 {
   width: 75%;
   font-size: 20px;
   color: black;
   border-bottom: solid 3px rgb(255, 0, 119);
 }
+
 .mainButton2 {
   font-size: 20px;
   padding: 10px 55px;
@@ -186,9 +205,11 @@ justify-content: center;
   color: white;
   background-color: rgb(255, 20, 106);
 }
+
 .mainButton2:hover {
   background-color: rgba(255, 20, 106, 0.616);
 }
+
 .container-banner {
   width: 100%;
   height: 670px;
@@ -198,6 +219,7 @@ justify-content: center;
   flex-direction: column;
   display: flex;
 }
+
 .text-h-1 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
@@ -205,6 +227,7 @@ justify-content: center;
   height: 56px;
   color: #ebecf3;
 }
+
 .botao2 {
   text-align: center;
   height: 66px;
@@ -217,6 +240,7 @@ justify-content: center;
   cursor: pointer;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
 .botao2:hover {
   background-color: #ecd6d6;
   color: rgb(0, 0, 0);

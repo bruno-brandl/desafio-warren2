@@ -7,7 +7,7 @@
     </div>
 
     <div>
-     <a href="https://warren.com.br/"><button class="invista">Invista</button></a> 
+      <a href="https://warren.com.br/"><button class="invista">Invista</button></a>
     </div>
   </div>
 </template>
@@ -31,10 +31,12 @@ export default {
   color: white;
   background-color: #6c6a6b;
 }
+
 h1 {
   font-size: 50px;
   font-family: "Times New Roman", Times, serif;
 }
+
 .invista {
   text-align: center;
   padding-left: 2px;
@@ -53,6 +55,7 @@ h1 {
   cursor: pointer;
   font-family: "Times New Roman", Times, serif;
 }
+
 .invista:hover {
   background-color: #f5e6e6;
   color: rgb(0, 0, 0);

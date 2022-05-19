@@ -40,6 +40,7 @@ footer {
   justify-content: center;
   align-items: flex-end;
 }
+
 #textos {
   height: 22 0px;
   width: 100ch;
@@ -47,12 +48,15 @@ footer {
   display: flex;
   justify-content: space-evenly;
 }
+
 .sobre {
   padding-top: 22px;
 }
+
 .investir {
   padding-top: 22px;
 }
+
 .fale {
   padding-top: 22px;
 }

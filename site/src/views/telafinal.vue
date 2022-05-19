@@ -1,7 +1,7 @@
 <template>
   <div>
-      <img  src="../assets/ok.png">
-      <final />
+    <img src="../assets/ok.png">
+    <final />
   </div>
 </template>
 
@@ -25,10 +25,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-img{
-margin-top: 85px;
-margin-left: 624px;
-width: 204px;
+
+img {
+  margin-top: 85px;
+  margin-left: 624px;
+  width: 204px;
 
 
 }
