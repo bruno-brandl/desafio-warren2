@@ -7,24 +7,45 @@
 
 
           <div class="modal-header">
-            <h4 class="modal-title">Dados</h4>
+
+            <h4 class="modal-title">Verifique os Dados Abaixo</h4>
 
           </div>
 
 
           <div class="modal-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae esse nam necessitatibus quaerat,
-              accusantium quod. Suscipit laudantium blanditiis minima veniam iste nemo vero, molestias delectus!
-              Repellat voluptatem dolorum expedita eius?</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt temporibus tempore quibusdam
-              aspernatur, soluta corporis ducimus officiis illum fugit odio cum! Animi vel nesciunt cumque quibusdam
-              quia cum ut amet.</p>
+            <h3>Analise e confirme todos os seus dados</h3>
+            <br>
+            <div id="#botoes">
+              <button id="dados">Dados</button>
+              <button id="endereco">Endereço</button>
+            </div>
+            <br>
+            <div id="border">
+              <div id="informacoes">
+                  <h2 id="title">Dados de Contato</h2>
+                <br>
+                <br>
+
+                <p>Nome: </p><p> Bruno</p>
+                <br>
+                <p>Email:</p> 
+                <p> Bruno@gmail.com</p>
+                <br>
+                
+                <p>CPF:</p>
+                <p>111.222.333-44</p>
+                <br>
+                <p>Telefone:</p>
+                <p> +55(47)984424263</p>
+                <br>
+              </div>
+            </div>
           </div>
-
           <div class="modal-footer">
-            <button v-on:click="close" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button v-on:click="close" type="button" class="btn-danger" data-dismiss="modal">Cancelar</button>
 
-            <router-link to="/TelaFinal"> <button class="btn">Continuar</button></router-link>
+            <router-link to="/TelaFinal"> <button class="btn-danger">Continuar</button></router-link>
           </div>
 
         </div>
@@ -86,12 +107,15 @@ export default {
 
 
 .modal-body {
-  padding: 160px;
+  padding: 54px;
+
 }
 
 .modal-header {
-  background-color: #ccc;
+  background-color: rgb(255, 255, 255);
   padding: 23px;
+  border-bottom: solid 2px rgb(43, 42, 42);
+  text-align: center;
 }
 
 .modal-footer {
@@ -100,7 +124,7 @@ export default {
   padding: 53px;
 }
 
-.btn btn-danger {
+#btn-danger {
   font-size: 20px;
   padding: 10px 55px;
   border: 0px;
@@ -111,7 +135,8 @@ export default {
   border-bottom: solid 2px #ff0054;
   margin-left: 38px;
 }
-.btn btn-danger:hover {
+
+.btn-danger:hover {
   background-color: rgb(117, 111, 111);
 }
 
@@ -129,5 +154,53 @@ export default {
 
 .btn:hover {
   background-color: rgba(255, 20, 106, 0.616);
+}
+
+#dados {
+  font-size: 20px;
+  padding: 7px 35px;
+  border: 0px;
+  border-radius: 23px;
+  color: white;
+  background-color: rgb(4, 4, 4);
+  cursor: pointer;
+  margin-left: 68px;
+  margin-right: 13px;
+}
+
+#dados:hover {
+  background-color: grey;
+}
+
+#endereco {
+  font-size: 20px;
+  padding: 7px 35px;
+  border: 0px;
+  border-radius: 23px;
+  color: white;
+  background-color: rgb(4, 4, 4);
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+#endereco:hover {
+  background-color: grey;
+}
+
+#informacoes {
+  margin-left: 10%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 17px;
+  display: block;
+}
+
+#border {
+  border: solid 2px gray;
+}
+#title{
+  margin-top: 12px;
+  margin-left: 37px;
+  border-bottom: solid 2px grey ;
+  margin-right: 55px;
 }
 </style>
