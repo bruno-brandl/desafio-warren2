@@ -117,7 +117,8 @@ export default {
 
 .principal {
   margin-right: 204px;
-}
+  
+  }
 
 #texts {
   margin-right: -14px;
@@ -215,7 +216,8 @@ input {
 
 .subtitle {
   border-left: solid 5px #ff0054;
-  min-width: 13px
+  min-width: 13px;
+  font-size: 43px;
 }
 
 #city {

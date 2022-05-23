@@ -1,7 +1,7 @@
 <template>
   <div id="principal">
     <button v-on:click="open" class="btn">Conntinuar</button>
-    <div class="modal" id="myModal">
+    <div v-show=" dados_pessoal" class="modal" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
 
@@ -17,7 +17,7 @@
             <h3>Analise e confirme todos os seus dados</h3>
             <br>
             <div id="#botoes">
-              <button id="dados">Dados</button>
+              <button id="dados" class="active">Dados</button>
               <button id="endereco">Endereço</button>
             </div>
             <br>
@@ -37,7 +37,7 @@
                 <p>111.222.333-44</p>
                 <br>
                 <p>Telefone:</p>
-                <p> +55(47)984424263</p>
+                <p> +55(47)98442-4263</p>
                 <br>
               </div>
             </div>
@@ -45,11 +45,14 @@
           <div class="modal-footer">
             <button v-on:click="close" type="button" class="btn-danger" data-dismiss="modal">Cancelar</button>
 
-            <router-link to="/TelaFinal"> <button class="btn-danger">Continuar</button></router-link>
+            <router-link to="/TelaFinal"> <button class="btn">Continuar</button></router-link>
           </div>
 
         </div>
       </div>
+    </div>
+    <div v-show="dados_endereco" class="modal">
+        <h2>dsagdkjsaghds</h2>
     </div>
   </div>
 
@@ -58,6 +61,12 @@
 <script>
 export default {
   name: "modalFinal",
+  data() {
+    return {
+      dados_endereco: true,
+      dados_pessoal: false  
+    }
+  },
   methods: {
 
     open: function () {
@@ -99,20 +108,22 @@ export default {
 
 }
 
-.modal-header h1 {
+.modal-header{
   font-weight: bold;
   text-align: center;
-
+  font-size: 23px;
 }
 
 
 .modal-body {
   padding: 54px;
-
-}
+  border-left: solid 1px rgb(0, 0, 0);
+  border-right: solid 1px black;
+  border-bottom: solid 2px black;
+ }
 
 .modal-header {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(212, 212, 212);
   padding: 23px;
   border-bottom: solid 2px rgb(43, 42, 42);
   text-align: center;
@@ -124,15 +135,14 @@ export default {
   padding: 53px;
 }
 
-#btn-danger {
+.btn-danger {
   font-size: 20px;
   padding: 10px 55px;
-  border: 0px;
+  border: none;
   border-radius: 3px;
   color: white;
   background-color: rgb(12, 12, 12);
   cursor: pointer;
-  border-bottom: solid 2px #ff0054;
   margin-left: 38px;
 }
 
@@ -149,7 +159,7 @@ export default {
   background-color: rgb(255, 20, 106);
   cursor: pointer;
   border-bottom: solid 2px #ff0054;
-  margin-left: 38px;
+  margin-left: 0px;
 }
 
 .btn:hover {
