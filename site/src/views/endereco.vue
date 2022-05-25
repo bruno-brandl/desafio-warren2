@@ -1,6 +1,7 @@
 <template>
   <div class="principal">
     <nav-endereco />
+    <Border-navgation/>
     <div id="contents">
 
       <div id="photo">
@@ -60,14 +61,16 @@
 </template>
 
 <script>
-import NavEndereco from '../components/endereconav.vue'
+import NavEndereco from '../components/endereconav.vue';
+import BorderNavgation from '../components/BorderNavigation.vue';
 import ModalFinal from '../components/ModalFinal.vue'
 export default {
   name: 'endereco-oi',
   components: {
     NavEndereco,
     ModalFinal,
-
+    BorderNavgation,
+    
   },
   data() {
     return {
@@ -83,7 +86,8 @@ export default {
   methods: {
 
     finalizar: function (modal) {
-      if (this.pais != '' && this.cidade != '' && this.cep) {
+   
+        if (this.pais != '' && this.cidade != '' && this.cep) {
         let modal = document.getElementById(modal);
 
         if (typeof modal == 'undefined' || modal === null)

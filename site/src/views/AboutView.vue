@@ -1,6 +1,9 @@
 <template>
   <div>
+
+
     <navbar />
+    <border-navigation/>
     <div id="contents">
 
       <div id="photo">
@@ -88,13 +91,13 @@
 import navbar from "../components/navbar.vue";
 import router from "../router/index"
 import enderecoVue from "./endereco.vue";
-
+import BorderNavigation from "../components/BorderNavigation.vue"
 
 export default ({
   name: "CadastroLogin",
   components: {
     navbar,
-
+    BorderNavigation
   },
   data() {
     return {
@@ -109,6 +112,9 @@ export default ({
     }
   },
   methods: {
+      save(){
+          this.$router.push({ name: '/CadastroLogin' })
+      },
     validar: function () {
       if (this.nome == "") {
         alert("Por Favor Informe seu Nome")
@@ -124,6 +130,39 @@ export default ({
       }
       else if (this.telefone == "") {
         alert("Por Favor Informe seu Telefone")
+      }
+      else if(this.cpf == "000.000.000-00") {
+        alert("CPF Invalido")
+      }
+      else if (this.cpf == "111.111.111-11"){
+          alert("CPF Invalido")
+      }
+       else if (this.cpf == "222.222.222-22"){
+          alert("CPF Invalido")
+      }
+       else if (this.cpf == "333.333.333-33"){
+          alert("CPF Invalido")
+      }
+      else if (this.cpf == "444.444.444-44"){
+        alert("Cpf Invalido")
+      }
+        else if (this.cpf == "555.555.555-55"){
+        alert("Cpf Invalido")
+      }
+        else if (this.cpf == "666.666.666-66"){
+        alert("Cpf Invalido")
+      }
+        else if (this.cpf == "777.777.777-77"){
+        alert("Cpf Invalido")
+      }
+        else if (this.cpf == "888.888.888-88"){
+        alert("Cpf Invalido")
+      }
+      else if ( this.cpf == "999.999.999-99"){
+        alert("CPF Invalido")
+      }
+            else if ( this.cpf == "123.456.789-10"){
+        alert("CPF Invalido")
       }
       else if (this.ema == this.ema2) {
         this.$router.push("/endereco")
@@ -192,7 +231,7 @@ input[type="number"] {
 
 #centralBox {
   height: 800px;
-  width: 947px;
+  width: 1161px;
   display: flex;
   flex-direction: column;
 }

@@ -35,6 +35,14 @@ const routes: Array<RouteConfig> = [
     // which is lazy-loaded when the route is visited.
     component: () => import('../views/telafinal.vue')
   },
+  {
+    path: '/ModalEndereco',
+    name: '/ModalEndereco',
+    // route level code-splitting
+    // this generates a separate chunk (About.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import('../components/ModalEndereco.vue')
+  },
 
 ]
 

@@ -14,12 +14,13 @@
 
 
           <div class="modal-body">
-            <h3>Analise e confirme todos os seus dados</h3>
+           
             <br>
             <div id="#botoes">
               <button id="dados" class="active">Dados</button>
-              <button id="endereco">Endereço</button>
-            </div>
+              <button id="endereco" v-on:click="endereco">Endereço</button>
+           
+           </div>
             <br>
             <div id="border">
               <div id="informacoes">
@@ -40,47 +41,102 @@
                 <p> +55(47)98442-4263</p>
                 <br>
               </div>
+             </div>
             </div>
-          </div>
           <div class="modal-footer">
             <button v-on:click="close" type="button" class="btn-danger" data-dismiss="modal">Cancelar</button>
 
             <router-link to="/TelaFinal"> <button class="btn">Continuar</button></router-link>
           </div>
-
         </div>
       </div>
     </div>
-    <div v-show="dados_endereco" class="modal">
-        <h2>dsagdkjsaghds</h2>
+    <div id="enderecom" class="modal2">
+    
+    <div class="modal-content2">
+     
+         <h2 id="title">Dados de Endereço</h2>
+         <br>
+         <br>
+          <button v-on:click="dados" class="btndados">Dados</button>
+          <button class="btnendereco">Endereco</button>
+                <br>
+                <br>
+                <div id="dadosdeendereco">
+                <p>Pais: </p><p> Brasil</p>
+                <br>
+                <p>Cidade:</p> 
+                <p> Blumenau</p>
+                <br>
+                <p>CEP:</p>
+                <p>1112-3344</p>
+                <br>
+                <p>Numero:</p>
+                <p> 55</p>
+                </div>
+                <br>
+                <button id="cancelar" v-on:click="fechar">Cancelar</button>
+              <router-link  to="/TelaFinal"> <button id="concluir">Continuar</button></router-link> 
+    </div>
+
+    
     </div>
   </div>
 
 </template>
 
 <script>
+import email from '../views/AboutView.vue'
 export default {
   name: "modalFinal",
   data() {
+
+    
     return {
       dados_endereco: true,
-      dados_pessoal: false  
+      dados_pessoal: false,
     }
   },
   methods: {
-
+    endereco: function(){
+      let endereco = document.getElementById("enderecom")
+      let modal = document.getElementById("myModal")
+     
+      modal.style.display = "none";
+      endereco.style.display = "block";
+    },
+      fechar: function(){
+      let endereco = document.getElementById("enderecom")
+      let modal = document.getElementById("myModal")
+     
+      modal.style.display = "none";
+      endereco.style.display = "none";
+    },
+        dados: function(){
+      let endereco = document.getElementById("enderecom")
+      let modal = document.getElementById("myModal")
+     
+      modal.style.display = "block";
+      endereco.style.display = "none";
+    },
     open: function () {
       let modal = document.getElementById("myModal")
-      modal.style.display = "block";
+           modal.style.display = "block";
+          this.$watch(
+      () => this.$router.params,
+      () => {
+        this.fetchData();        
+      },
+      { immediate: true }
+    );
+       console.log(this.$route.params)
     },
     close: function () {
       let modal = document.getElementById("myModal")
       modal.style.display = "none";
     }
 
-
   }
-
 
 };
 
@@ -137,13 +193,14 @@ export default {
 
 .btn-danger {
   font-size: 20px;
-  padding: 10px 55px;
-  border: none;
+  padding: 11px 55px;
+  border: 0px   ;
   border-radius: 3px;
   color: white;
   background-color: rgb(12, 12, 12);
   cursor: pointer;
   margin-left: 38px;
+  margin-top: -7px;
 }
 
 .btn-danger:hover {
@@ -152,14 +209,15 @@ export default {
 
 .btn {
   font-size: 20px;
-  padding: 10px 55px;
+  padding: 11px 55px;
   border: 0px;
   border-radius: 3px;
   color: white;
   background-color: rgb(255, 20, 106);
   cursor: pointer;
   border-bottom: solid 2px #ff0054;
-  margin-left: 0px;
+  margin-left: 10px;
+  
 }
 
 .btn:hover {
@@ -168,14 +226,14 @@ export default {
 
 #dados {
   font-size: 20px;
-  padding: 7px 35px;
-  border: 0px;
-  border-radius: 23px;
+  padding:  8px 39px;
+  border: 0px   ;
+  border-radius: 3px;
   color: white;
-  background-color: rgb(4, 4, 4);
-  cursor: pointer;
-  margin-left: 68px;
-  margin-right: 13px;
+  background-color: rgb(12, 12, 12);
+  cursor: default;
+  margin-left: 38px;
+  margin-top: -7px;
 }
 
 #dados:hover {
@@ -184,17 +242,19 @@ export default {
 
 #endereco {
   font-size: 20px;
-  padding: 7px 35px;
+  padding:  8px 39px;
   border: 0px;
-  border-radius: 23px;
+  border-radius: 3px;
   color: white;
-  background-color: rgb(4, 4, 4);
+  background-color: rgb(255, 20, 106);
   cursor: pointer;
-  margin-left: 8px;
+  border-bottom: solid 2px #ff0054;
+  margin-left: 10px;
+
 }
 
 #endereco:hover {
-  background-color: grey;
+  background-color: rgba(255, 20, 106, 0.616);
 }
 
 #informacoes {
@@ -212,5 +272,89 @@ export default {
   margin-left: 37px;
   border-bottom: solid 2px grey ;
   margin-right: 55px;
+}
+.modal2{
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+.modal-content2 {
+  margin: 0 auto;
+  margin-top: 1%;
+  max-width: 600px;
+  background-color: #eee;
+  padding: 43px 34px;
+  box-shadow: 0 0 2px #fff;
+
+
+}
+#dadosdeendereco{
+  margin-left:60px;
+  margin-top: 29px;
+  
+}
+
+.btndados {
+  font-size: 20px;
+  padding:  8px 39px;
+  border: 0px;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(255, 20, 106);
+  cursor: pointer;
+  border-bottom: solid 2px #ff0054;
+  margin-left: 10px;
+  
+}
+
+.btndados:hover {
+  background-color: rgba(255, 20, 106, 0.616);
+}
+
+.btnendereco {
+  font-size: 20px;
+  padding:  8px 39px;
+  border: 0px   ;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(12, 12, 12);
+  cursor: default;
+  margin-left: 38px;
+  margin-top: -7px;
+}
+#concluir{
+  font-size: 20px;
+  padding: 11px 55px;
+  border: 0px;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(255, 20, 106);
+  cursor: pointer;
+  border-bottom: solid 2px #ff0054;
+  margin-left: 10px;
+}
+#concluir:hover {
+  background-color: rgba(255, 20, 106, 0.616);
+}
+#cancelar{
+    font-size: 20px;
+  padding: 11px 55px;
+  border: 0px;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(39, 39, 39);
+  cursor: pointer;
+  margin-left: 10px;
+}
+#cancelar:hover {
+  background-color: rgba(164, 164, 164, 0.616);
 }
 </style>
