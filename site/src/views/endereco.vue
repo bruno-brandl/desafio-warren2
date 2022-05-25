@@ -64,6 +64,7 @@
 import NavEndereco from '../components/endereconav.vue';
 import BorderNavgation from '../components/BorderNavigation.vue';
 import ModalFinal from '../components/ModalFinal.vue'
+import CadastroLogin from  '../views/AboutView.vue'
 export default {
   name: 'endereco-oi',
   components: {
@@ -87,7 +88,7 @@ export default {
 
     finalizar: function (modal) {
    
-        if (this.pais != '' && this.cidade != '' && this.cep) {
+        if (this.pais != null) {
         let modal = document.getElementById(modal);
 
         if (typeof modal == 'undefined' || modal === null)

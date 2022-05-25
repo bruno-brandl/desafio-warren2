@@ -62,11 +62,11 @@
           <p class="bottonText">Mattis semper odio preretium vestibulum nulla</p>
           <br />
           <div id="sms">
-            <input type="radio" />
+            <input type="checkbox" />
             <label>Email e SMS</label>
           </div>
           <div id="mensageApp">
-            <input v-maska= "'checkbox'" type="radio" />
+            <input type="checkbox" />
             <label>Whatsapp</label>
           </div>
         </form>

@@ -28,10 +28,10 @@
                 <br>
                 <br>
 
-                <p>Nome: </p><p> Bruno</p>
+                <p>Nome: </p><p> {{this.nome}}</p>
                 <br>
                 <p>Email:</p> 
-                <p> Bruno@gmail.com</p>
+                <p> {{this.ema}}</p>
                 <br>
                 
                 <p>CPF:</p>
@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import email from '../views/AboutView.vue'
+import CadastroLogin from  '../views/AboutView.vue'
 export default {
   name: "modalFinal",
   data() {
