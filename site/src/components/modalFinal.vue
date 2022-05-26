@@ -60,6 +60,9 @@
          <br>
           <button v-on:click="dados" class="btndados">Dados</button>
           <button class="btnendereco">Endereco</button>
+          <br>
+          <br>
+          <div id="dadosendereco">
                 <br>
                 <br>
                 <div id="dadosdeendereco">
@@ -73,6 +76,8 @@
                 <br>
                 <p>Numero:</p>
                 <p> 55</p>
+                <br>
+                </div>
                 </div>
                 <br>
                 <button id="cancelar" v-on:click="fechar">Cancelar</button>
@@ -227,34 +232,28 @@ export default {
 #dados {
   font-size: 20px;
   padding:  8px 39px;
-  border: 0px   ;
-  border-radius: 3px;
-  color: white;
-  background-color: rgb(12, 12, 12);
-  cursor: default;
-  margin-left: 38px;
-  margin-top: -7px;
+  border: solid 2px black;
+  border-radius: 23px;
+  color: rgb(0, 0, 0);
+  margin-left: 10px;
 }
 
-#dados:hover {
-  background-color: grey;
-}
+
 
 #endereco {
   font-size: 20px;
   padding:  8px 39px;
-  border: 0px;
-  border-radius: 3px;
-  color: white;
-  background-color: rgb(255, 20, 106);
+  border: solid 2px black;
+  border-radius: 23px;
+  color: rgb(0, 0, 0);
   cursor: pointer;
-  border-bottom: solid 2px #ff0054;
   margin-left: 10px;
 
 }
 
 #endereco:hover {
-  background-color: rgba(255, 20, 106, 0.616);
+  background-color: black;
+  color: white;
 }
 
 #informacoes {
@@ -277,7 +276,6 @@ export default {
   display: none; 
   position: fixed;
   z-index: 1; 
-  padding-top: 100px; 
   left: 0;
   top: 0;
   width: 100%; 
@@ -294,40 +292,37 @@ export default {
   box-shadow: 0 0 2px #fff;
 
 
+
 }
 #dadosdeendereco{
   margin-left:60px;
-  margin-top: 29px;
+
   
 }
 
 .btndados {
   font-size: 20px;
   padding:  8px 39px;
-  border: 0px;
-  border-radius: 3px;
-  color: white;
-  background-color: rgb(255, 20, 106);
+  border: solid 2px black;
+  border-radius: 23px;
+  color: rgb(0, 0, 0);
   cursor: pointer;
-  border-bottom: solid 2px #ff0054;
   margin-left: 10px;
   
 }
 
 .btndados:hover {
-  background-color: rgba(255, 20, 106, 0.616);
+  background-color:black;
+  color: white;
 }
 
 .btnendereco {
   font-size: 20px;
   padding:  8px 39px;
-  border: 0px   ;
-  border-radius: 3px;
-  color: white;
-  background-color: rgb(12, 12, 12);
-  cursor: default;
-  margin-left: 38px;
-  margin-top: -7px;
+  border: solid 2px black;
+  border-radius: 23px;
+  color: rgb(0, 0, 0);
+  margin-left: 10px;
 }
 #concluir{
   font-size: 20px;
@@ -344,7 +339,7 @@ export default {
   background-color: rgba(255, 20, 106, 0.616);
 }
 #cancelar{
-    font-size: 20px;
+  font-size: 20px;
   padding: 11px 55px;
   border: 0px;
   border-radius: 3px;
@@ -355,5 +350,10 @@ export default {
 }
 #cancelar:hover {
   background-color: rgba(164, 164, 164, 0.616);
+}
+#dadosendereco{
+  border: solid 2px black;
+  margin: 0;
+  margin-bottom: 50px;
 }
 </style>

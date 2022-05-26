@@ -1,13 +1,10 @@
 <template>
       <div class="animation-linhas">
-    <input id="initial-input" type="radio" :checked="currentState >= 1" />
+    <input id="initial-input" type="checkbox" :checked="currentState >= 1" />
     <div class="linha01" />
-    <input id="center-input" type="radio" :checked="currentState >= 2" />
+    <input id="center-input" type="checkbox" :checked="currentState >= 2" />
     <div class="linha02" />
-    <input
-      id="finished-input"
-      type="radio"
-      :checked="currentState === 3"
+    <input id="finished-input" type="checkbox" :checked="currentState === 3"
     />
   </div>
 </template>
@@ -37,5 +34,8 @@ margin-left: 296px;
   padding: 0px;
   margin: 0px;
   border: 2px solid red;
+}
+input{
+  border-radius: 23px;
 }
 </style>
