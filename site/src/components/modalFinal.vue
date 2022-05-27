@@ -95,7 +95,7 @@ import CadastroLogin from  '../views/AboutView.vue'
 export default {
   name: "modalFinal",
   data() {
-
+        
     
     return {
       dados_endereco: true,
@@ -234,8 +234,9 @@ export default {
   padding:  8px 39px;
   border: solid 2px black;
   border-radius: 23px;
-  color: rgb(0, 0, 0);
+  color:white;
   margin-left: 10px;
+  background-color: black;
 }
 
 
@@ -321,8 +322,9 @@ export default {
   padding:  8px 39px;
   border: solid 2px black;
   border-radius: 23px;
-  color: rgb(0, 0, 0);
+  color:white;
   margin-left: 10px;
+  background-color: black;
 }
 #concluir{
   font-size: 20px;

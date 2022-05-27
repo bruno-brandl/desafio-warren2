@@ -77,7 +77,7 @@
         </p>
         <br />
         <div id="button">
-          <button v-on:click="validar" class="btn next1">Continuar</button>
+          <button @click.prevent="validar" class="btn next1">Continuar</button>
 
         </div>
       </div>
@@ -99,21 +99,35 @@ export default ({
     navbar,
     BorderNavigation
   },
+  props:{
+      teste:{
+         type: String,
+         required: true
+      }
+  },
   data() {
     return {
-      
-      ema: '',
-      ema2: '',
-      cpf: '',
-      nome: '',
-      telefone: '',
-      date: "",
+      contact: {
+        ema: '',
+        ema2: '',
+        cpf: '',
+        nome: '',
+        telefone: '',
+        date: "",
+      }
   
     }
   },
   methods: {
       save(){
+        if(this.validar){
+          console.log('Entrou')
           this.$router.push({ name: '/CadastroLogin' })
+        }
+        else {
+          console.log('Nao entrou')
+
+        }
       },
     validar: function () {
       if (this.nome == "") {
@@ -165,7 +179,7 @@ export default ({
         alert("CPF Invalido")
       }
       else if (this.ema == this.ema2) {
-        this.$router.push("/endereco")
+        router.push('/CadastroLogin')
         var Soma;
         var Resto;
         var i;
@@ -183,10 +197,10 @@ export default ({
         Resto = (Soma * 10) % 11;
         if (Resto == 10 || Resto == 11) Resto = 0;
         if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+        return true
 
-        return true;
-
-
+;
+    
       }
     }
   },

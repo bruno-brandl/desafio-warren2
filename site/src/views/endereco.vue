@@ -64,7 +64,6 @@
 import NavEndereco from '../components/endereconav.vue';
 import BorderNavgation from '../components/BorderNavigation.vue';
 import ModalFinal from '../components/ModalFinal.vue'
-import CadastroLogin from  '../views/AboutView.vue'
 export default {
   name: 'endereco-oi',
   components: {
