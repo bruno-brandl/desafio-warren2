@@ -89,7 +89,7 @@ export default {
    
         if (this.pais != null) {
         let modal = document.getElementById(modal);
-
+        
         if (typeof modal == 'undefined' || modal === null)
           return;
 

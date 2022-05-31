@@ -87,7 +87,7 @@ export default {
 }
 
 .navbar {
-  background-color: #f03079;
+  background-color: #857f81;
   padding-top: 1rem;
   padding-bottom: 1rem;
   width: 100%;
@@ -122,7 +122,7 @@ export default {
   color: #000000;
   padding: 13px;
   border-radius: 24px;
-  background-color: #e84e93;
+  background-color: #6b6b6b;
 }
 
 .botao:hover {

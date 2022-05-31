@@ -8,8 +8,6 @@
 
           <div class="modal-header">
 
-            <h4 class="modal-title">Verifique os Dados Abaixo</h4>
-
           </div>
 
 
@@ -55,7 +53,7 @@
     
     <div class="modal-content2">
      
-         <h2 id="title">Dados de Endereço</h2>
+       
          <br>
          <br>
           <button v-on:click="dados" class="btndados">Dados</button>
@@ -63,6 +61,7 @@
           <br>
           <br>
           <div id="dadosendereco">
+              <h2 id="title">Dados de Endereço</h2>
                 <br>
                 <br>
                 <div id="dadosdeendereco">
@@ -164,37 +163,19 @@ export default {
   margin-top: 1%;
   max-width: 600px;
   background-color: #eee;
-  padding: 0;
+  padding: 43px 34px;
   box-shadow: 0 0 2px #fff;
 
 }
 
-.modal-header{
-  font-weight: bold;
-  text-align: center;
-  font-size: 23px;
-}
-
 
 .modal-body {
-  padding: 54px;
-  border-left: solid 1px rgb(0, 0, 0);
-  border-right: solid 1px black;
-  border-bottom: solid 2px black;
+  padding: 64px;
+  height: 500px;
  }
 
-.modal-header {
-  background-color: rgb(212, 212, 212);
-  padding: 23px;
-  border-bottom: solid 2px rgb(43, 42, 42);
-  text-align: center;
-}
 
-.modal-footer {
-  background-color: #ccc;
-  height: 10px;
-  padding: 53px;
-}
+
 
 .btn-danger {
   font-size: 20px;
@@ -283,6 +264,7 @@ export default {
   height: 100%;
   overflow: auto; 
   background-color: rgba(0, 0, 0, .8);
+  
 }
 .modal-content2 {
   margin: 0 auto;

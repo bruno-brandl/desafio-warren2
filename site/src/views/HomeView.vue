@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Componente1 />
+    <nav-bar />
     <section>
       <div class="container-banner">
         <div class="text-h-1">
@@ -13,7 +13,7 @@
         </div>
       </div>
     </section>
-    <br />
+    <div class="texts">
     <div id="texto1">
       <div id="divMain">
         <div id="mainContents1">
@@ -58,13 +58,12 @@
         </div>
       </div>
     </div>
-    <br />
-    <br />
+    </div>
     <div id="invista">
-      <Componente2 />
+      <invista />
     </div>
 
-    <Componente3 />
+    <footer-home/>
   </div>
 
 
@@ -73,15 +72,16 @@
 
 
 <script>
-import Componente1 from "../components/navigation.vue";
-import Componente2 from "../components/invista.vue";
-import Componente3 from "../components/footer.vue";
+import navBar from "../components/navigation.vue";
+import invista from "../components/invista.vue";
+import footerHome from "../components/footer.vue";
 export default {
   name: "HomeVue",
   components: {
-    Componente1,
-    Componente2,
-    Componente3,
+    navBar,
+    invista,
+    footerHome,
+    
   },
 };
 
@@ -120,6 +120,7 @@ svg:hover {
   height: 143px;
   display: flex;
   justify-content: center;
+  margin-bottom: 300px;
 }
 
 #mainText1 {
@@ -129,19 +130,24 @@ svg:hover {
   flex-direction: column;
   justify-content: space-evenly;
   margin-top: 10%;
+  margin-right: 70px;
 
 }
 
 #mainTitle1 {
   font-size: 40px;
   color: black;
+  margin-bottom: 1%;
+   font-family: 'Times New Roman', Times, serif;
 }
 
 .mainText1 {
   width: 75%;
-  font-size: 20px;
+  font-size: 25px;
   color: black;
+  margin-bottom: 32px;
   border-bottom: solid 3px rgb(255, 0, 89);
+   font-family: 'Times New Roman', Times, serif;
 }
 
 #border {
@@ -150,10 +156,11 @@ svg:hover {
 
 .mainButton1 {
   font-size: 20px;
-  padding: 10px 55px;
+  padding: 15px 79px;
   border: 0px;
   border-radius: 30px;
   color: white;
+  margin-bottom: 120px;
   background-color: rgb(255, 20, 106);
 }
 
@@ -170,13 +177,14 @@ svg:hover {
 
 #mainPhoto2 {
   width: 60%;
-  height: 296px;
+  height: 450px;
   display: flex;
   justify-content: center;
+  margin-bottom: 180px;
 }
 
 #mainText2 {
-  height: 50vh;
+  height: 40vh;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -188,22 +196,27 @@ svg:hover {
 #mainTitle2 {
   font-size: 40px;
   color: black;
+  margin-bottom: 1%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .mainText2 {
   width: 75%;
-  font-size: 20px;
+  font-size: 25px;
   color: black;
-  border-bottom: solid 3px rgb(255, 0, 119);
+  border-bottom: solid 3px rgb(255, 0, 89);
+  margin-bottom: 13px;
+   font-family: 'Times New Roman', Times, serif;
 }
 
 .mainButton2 {
   font-size: 20px;
-  padding: 10px 55px;
+  padding: 15px 79px;
   border: 0px;
   border-radius: 30px;
   color: white;
   background-color: rgb(255, 20, 106);
+  margin-bottom: 220px;
 }
 
 .mainButton2:hover {
@@ -245,5 +258,9 @@ svg:hover {
   background-color: #ecd6d6;
   color: rgb(0, 0, 0);
   border-bottom: 2px solid rgb(233, 107, 107);
+}
+.texts{
+    height: 960px;
+    width: 100%;
 }
 </style>

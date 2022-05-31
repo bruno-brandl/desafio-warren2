@@ -3,7 +3,7 @@
 
 
     <navbar />
-    <border-navigation/>
+    <border-navigation />
     <div id="contents">
 
       <div id="photo">
@@ -76,8 +76,10 @@
           <br />Habitant neque, id risus diam
         </p>
         <br />
+
         <div id="button">
-          <button @click.prevent="validar" class="btn next1">Continuar</button>
+          <br>
+          <button v-on:click="validar" class="btn next1">Continuar</button>
 
         </div>
       </div>
@@ -89,8 +91,6 @@
 <script>
 
 import navbar from "../components/navbar.vue";
-import router from "../router/index"
-import enderecoVue from "./endereco.vue";
 import BorderNavigation from "../components/BorderNavigation.vue"
 
 export default ({
@@ -99,11 +99,11 @@ export default ({
     navbar,
     BorderNavigation
   },
-  props:{
-      teste:{
-         type: String,
-         required: true
-      }
+  props: {
+    teste: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {
@@ -115,93 +115,70 @@ export default ({
         telefone: '',
         date: "",
       }
-  
+
     }
   },
   methods: {
-      save(){
-        if(this.validar){
-          console.log('Entrou')
-          this.$router.push({ name: '/CadastroLogin' })
+    cpfclear() {
+      let c = []
+      let clear = this.cpf.split("")
+      for (let i = 0; i < clear.length; i++) {
+        if (clear[i] != ".") {
+          if (clear[i] != ".") {
+            c.push(parseInt(clear[i]))
+          }
         }
-        else {
-          console.log('Nao entrou')
-
-        }
-      },
-    validar: function () {
-      if (this.nome == "") {
-        alert("Por Favor Informe seu Nome")
       }
-      else if (this.ema == "") {
-        alert("Por Favor Informe se email")
+      return c.join("")
+    },
+    cpfvalidate() {
+      let Soma;
+      let Resto = 0;
+      let strCPF = this.cpfclear();
+      Soma = 0;
+      if (strCPF == "") {
+        return false;
       }
-      else if (this.ema2 == "" && this.ema2 != this.ema) {
-        alert("Os email devem ser iguais")
-      }
-      else if (this.cpf == "") {
-        alert("Por Favor Informe seu CPF")
-      }
-      else if (this.telefone == "") {
-        alert("Por Favor Informe seu Telefone")
-      }
-      else if(this.cpf == "000.000.000-00") {
-        alert("CPF Invalido")
-      }
-      else if (this.cpf == "111.111.111-11"){
-          alert("CPF Invalido")
-      }
-       else if (this.cpf == "222.222.222-22"){
-          alert("CPF Invalido")
-      }
-       else if (this.cpf == "333.333.333-33"){
-          alert("CPF Invalido")
-      }
-      else if (this.cpf == "444.444.444-44"){
-        alert("Cpf Invalido")
-      }
-        else if (this.cpf == "555.555.555-55"){
-        alert("Cpf Invalido")
-      }
-        else if (this.cpf == "666.666.666-66"){
-        alert("Cpf Invalido")
-      }
-        else if (this.cpf == "777.777.777-77"){
-        alert("Cpf Invalido")
-      }
-        else if (this.cpf == "888.888.888-88"){
-        alert("Cpf Invalido")
-      }
-      else if ( this.cpf == "999.999.999-99"){
-        alert("CPF Invalido")
-      }
-            else if ( this.cpf == "123.456.789-10"){
-        alert("CPF Invalido")
-      }
-      else if (this.ema == this.ema2) {
-        router.push('/CadastroLogin')
-        var Soma;
-        var Resto;
-        var i;
-        var strCPF = this.cpf;
-        Soma = 0;
-        if (strCPF == "00000000000") return false;
-        for (i = 1; i <= 9; i++)
-          Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+      for (let i = 0; i < strCPF; i++) {
+        Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
         Resto = (Soma * 10) % 11;
-        if (Resto == 10 || Resto == 11) Resto = 0;
+
+        if ((Resto == 10) || (Resto == 11)) Resto = 0;
         if (Resto != parseInt(strCPF.substring(9, 10))) return false;
         Soma = 0;
-        for (i = 1; i <= 10; i++)
-          Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+        for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
         Resto = (Soma * 10) % 11;
-        if (Resto == 10 || Resto == 11) Resto = 0;
-        if (Resto != parseInt(strCPF.substring(10, 11))) return false;
-        return true
 
-;
-    
+        if ((Resto == 10) || (Resto == 11)) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+        return true;
+
       }
+    },
+    validar: function () {
+      if(this.cpfvalidate == true){
+        alert("VERIFICAMO PORRAAAAAAAAAA")
+      } else{
+        alert("PUTA QUE O PARIU NN FUNCIONOU DNV ESSPA PORRAAAAAA")
+      }
+
+   /*   if (this.nome == null) {
+        alert("Por Favor Informe seu Nome")
+      }
+      else if (this.ema == null) {
+        alert("Por Favor Informe se email")
+      }
+      else if (this.ema2 == null && this.ema2 != this.ema) {
+        alert("Os email devem ser iguais")
+      }
+      else if (this.cpf == null) {
+        alert("Por Favor Informe seu CPF")
+      }
+      else if (this.telefone == null) {
+        alert("Por Favor Informe seu Telefone")
+      }*/
+      
+
     }
   },
 }
