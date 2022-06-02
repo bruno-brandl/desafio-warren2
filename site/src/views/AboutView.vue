@@ -99,12 +99,7 @@ export default ({
     navbar,
     BorderNavigation
   },
-  props: {
-    teste: {
-      type: String,
-      required: true
-    }
-  },
+
   data() {
     return {
       contact: {
@@ -119,70 +114,62 @@ export default ({
     }
   },
   methods: {
-    cpfclear() {
-      let c = []
-      let clear = this.cpf.split("")
-      for (let i = 0; i < clear.length; i++) {
-        if (clear[i] != ".") {
-          if (clear[i] != ".") {
-            c.push(parseInt(clear[i]))
-          }
-        }
-      }
-      return c.join("")
+
+    cpfValidate() {
+  let firstDigitAfterDash = 0
+  let arrayCpf = Array.from(this.cpf.replaceAll('.', '').replace('-', ''))
+
+  for (let i = 0; i < arrayCpf.length - 2; i++) {
+    firstDigitAfterDash += Number.parseInt(arrayCpf[i]) * (10 - i)
+  }
+  firstDigitAfterDash = 11 - (firstDigitAfterDash % 11)
+  firstDigitAfterDash = firstDigitAfterDash === 10 ? 0 : firstDigitAfterDash
+
+  if (Number.parseInt(arrayCpf[arrayCpf.length - 2]) !== firstDigitAfterDash) {
+    return false
+  }
+
+  let secondDigitAfterDash = 0
+  for (let i = 0; i < arrayCpf.length - 1; i++)
+  {
+    secondDigitAfterDash += Number.parseInt(arrayCpf[i]) * (11 - i)
+  }
+  secondDigitAfterDash = 11 - (secondDigitAfterDash % 11)
+  secondDigitAfterDash = secondDigitAfterDash === 10 ? 0 : secondDigitAfterDash
+
+  return secondDigitAfterDash === Number.parseInt(arrayCpf[arrayCpf.length - 1])
+
+
+
+
     },
-    cpfvalidate() {
-      let Soma;
-      let Resto = 0;
-      let strCPF = this.cpfclear();
-      Soma = 0;
-      if (strCPF == "") {
-        return false;
-      }
-      for (let i = 0; i < strCPF; i++) {
-        Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
-        Resto = (Soma * 10) % 11;
 
-        if ((Resto == 10) || (Resto == 11)) Resto = 0;
-        if (Resto != parseInt(strCPF.substring(9, 10))) return false;
-        Soma = 0;
-        for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
-        Resto = (Soma * 10) % 11;
+    validar() {
+       if (this.nome == null) {
+           alert("Por Favor Informe seu Nome")
+         }
+         else if (this.ema == null) {
+           alert("Por Favor Informe se email")
+         }
+         else if (this.ema2 == null && this.ema2 != this.ema) {
+           alert("Os email devem ser iguais")
+         }
+         else if (this.cpf == null) {
+           alert("Por Favor Informe seu CPF")
+         }
+         else if (this.telefone == null) {
+           alert("Por Favor Informe seu Telefone")
+         }
 
-        if ((Resto == 10) || (Resto == 11)) Resto = 0;
-        if (Resto != parseInt(strCPF.substring(10, 11))) return false;
-        return true;
-
-      }
-    },
-    validar: function () {
-      if(this.cpfvalidate == true){
-        alert("VERIFICAMO PORRAAAAAAAAAA")
-      } else{
+         else if (this.cpfValidate()) {
+            this.$router.push("/endereco")
+      } else {
         alert("PUTA QUE O PARIU NN FUNCIONOU DNV ESSPA PORRAAAAAA")
       }
-
-   /*   if (this.nome == null) {
-        alert("Por Favor Informe seu Nome")
-      }
-      else if (this.ema == null) {
-        alert("Por Favor Informe se email")
-      }
-      else if (this.ema2 == null && this.ema2 != this.ema) {
-        alert("Os email devem ser iguais")
-      }
-      else if (this.cpf == null) {
-        alert("Por Favor Informe seu CPF")
-      }
-      else if (this.telefone == null) {
-        alert("Por Favor Informe seu Telefone")
-      }*/
       
-
     }
-  },
-}
-)
+  }
+})
 </script>
 
 <style scoped>

@@ -156,6 +156,7 @@ export default {
   width: 100vw;
   height: 100vh;
   display: none;
+  
 }
 
 .modal-content {
@@ -165,7 +166,7 @@ export default {
   background-color: #eee;
   padding: 43px 34px;
   box-shadow: 0 0 2px #fff;
-
+  border-radius:25px
 }
 
 
@@ -173,10 +174,6 @@ export default {
   padding: 64px;
   height: 500px;
  }
-
-
-
-
 .btn-danger {
   font-size: 20px;
   padding: 11px 55px;
@@ -230,7 +227,7 @@ export default {
   color: rgb(0, 0, 0);
   cursor: pointer;
   margin-left: 10px;
-
+  
 }
 
 #endereco:hover {
@@ -273,6 +270,8 @@ export default {
   background-color: #eee;
   padding: 43px 34px;
   box-shadow: 0 0 2px #fff;
+    border-radius:25px
+
 
 
 
