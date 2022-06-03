@@ -154,7 +154,7 @@ export default ({
         alert("Por Favor Informe seu Telefone")
       }*/
 
-       if (this.cpfValidate()) {
+        if (this.cpfValidate()) {
         this.$router.push("/endereco")
       } else {
         alert("CPF INVALIDO MANÉ")
