@@ -1,7 +1,5 @@
 <template>
   <div>
-
-
     <navbar />
     <border-navigation />
     <div id="contents">
@@ -116,57 +114,52 @@ export default ({
   methods: {
 
     cpfValidate() {
-  let firstDigitAfterDash = 0
-  let arrayCpf = Array.from(this.cpf.replaceAll('.', '').replace('-', ''))
+      let firstDigitAfterDash = 0
+      let arrayCpf = Array.from(this.cpf.replaceAll('.', '').replace('-', ''))
 
-  for (let i = 0; i < arrayCpf.length - 2; i++) {
-    firstDigitAfterDash += Number.parseInt(arrayCpf[i]) * (10 - i)
-  }
-  firstDigitAfterDash = 11 - (firstDigitAfterDash % 11)
-  firstDigitAfterDash = firstDigitAfterDash === 10 ? 0 : firstDigitAfterDash
+      for (let i = 0; i < arrayCpf.length - 2; i++) {
+        firstDigitAfterDash += Number.parseInt(arrayCpf[i]) * (10 - i)
+      }
+      firstDigitAfterDash = 11 - (firstDigitAfterDash % 11)
+      firstDigitAfterDash = firstDigitAfterDash === 10 ? 0 : firstDigitAfterDash
 
-  if (Number.parseInt(arrayCpf[arrayCpf.length - 2]) !== firstDigitAfterDash) {
-    return false
-  }
+      if (Number.parseInt(arrayCpf[arrayCpf.length - 2]) !== firstDigitAfterDash) {
+        return false
+      }
 
-  let secondDigitAfterDash = 0
-  for (let i = 0; i < arrayCpf.length - 1; i++)
-  {
-    secondDigitAfterDash += Number.parseInt(arrayCpf[i]) * (11 - i)
-  }
-  secondDigitAfterDash = 11 - (secondDigitAfterDash % 11)
-  secondDigitAfterDash = secondDigitAfterDash === 10 ? 0 : secondDigitAfterDash
+      let secondDigitAfterDash = 0
+      for (let i = 0; i < arrayCpf.length - 1; i++) {
+        secondDigitAfterDash += Number.parseInt(arrayCpf[i]) * (11 - i)
+      }
+      secondDigitAfterDash = 11 - (secondDigitAfterDash % 11)
+      secondDigitAfterDash = secondDigitAfterDash === 10 ? 0 : secondDigitAfterDash
 
-  return secondDigitAfterDash === Number.parseInt(arrayCpf[arrayCpf.length - 1])
-
-
-
-
-    },
+      return secondDigitAfterDash === Number.parseInt(arrayCpf[arrayCpf.length - 1])
+        },
 
     validar() {
-       if (this.nome == null) {
-           alert("Por Favor Informe seu Nome")
-         }
-         else if (this.ema == null) {
-           alert("Por Favor Informe se email")
-         }
-         else if (this.ema2 == null && this.ema2 != this.ema) {
-           alert("Os email devem ser iguais")
-         }
-         else if (this.cpf == null) {
-           alert("Por Favor Informe seu CPF")
-         }
-         else if (this.telefone == null) {
-           alert("Por Favor Informe seu Telefone")
-         }
-
-         else if (this.cpfValidate()) {
-            this.$router.push("/endereco")
-      } else {
-        alert("PUTA QUE O PARIU NN FUNCIONOU DNV ESSPA PORRAAAAAA")
+      /*if (this.nome == null) {
+        alert("Por Favor Informe seu Nome")
       }
-      
+      else if (this.ema == null) {
+        alert("Por Favor Informe se email")
+      }
+      else if (this.ema2 == null && this.ema2 != this.ema) {
+        alert("Os email devem ser iguais")
+      }
+      else if (this.cpf == null) {
+        alert("Por Favor Informe seu CPF")
+      }
+      else if (this.telefone == null) {
+        alert("Por Favor Informe seu Telefone")
+      }*/
+
+       if (this.cpfValidate()) {
+        this.$router.push("/endereco")
+      } else {
+        alert("CPF INVALIDO MANÉ")
+      }
+
     }
   }
 })
