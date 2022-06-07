@@ -1,10 +1,10 @@
 <template>
   <div class="animation-linhas">
-    <input id="initial-input" type="checkbox" :checked="currentState >= 1" />
+   <input id="initial-input" type="radio"  />
     <div class="linha01" />
-    <input id="center-input" type="checkbox" :checked="currentState >= 2" />
-    <div class="linha02" />
-    <input id="finished-input" type="checkbox" :checked="currentState === 3" />
+    <input id="center-input" type="radio"  />
+    <div class="linha02" /> 
+    <input id="finished-input" type="radio" />
   </div>
 </template>
 <script>

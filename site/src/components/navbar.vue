@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="navbar">
-
+         
             <div class="nav-container">
                 <router-link to="/"><img class="logo" src="../assets/icon.png" alt=""> </router-link>
                 <h1 class="text">Cadastro</h1>

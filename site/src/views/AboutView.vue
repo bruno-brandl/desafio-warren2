@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link :to="{ path: '/endereco', query: { usuario: this.name } }"></router-link>
     <navbar />
     <border-navigation />
     <div id="contents">
@@ -135,10 +136,10 @@ export default ({
       secondDigitAfterDash = secondDigitAfterDash === 10 ? 0 : secondDigitAfterDash
 
       return secondDigitAfterDash === Number.parseInt(arrayCpf[arrayCpf.length - 1])
-        },
+    },
 
     validar() {
-      /*if (this.nome == null) {
+      if (this.nome == null) {
         alert("Por Favor Informe seu Nome")
       }
       else if (this.ema == null) {
@@ -152,12 +153,11 @@ export default ({
       }
       else if (this.telefone == null) {
         alert("Por Favor Informe seu Telefone")
-      }*/
-
-        if (this.cpfValidate()) {
+      }
+      else if (this.cpfValidate()) {
         this.$router.push("/endereco")
       } else {
-        alert("CPF INVALIDO MANÉ")
+        alert("CPF INVALIDO")
       }
 
     }
