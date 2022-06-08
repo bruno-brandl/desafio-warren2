@@ -27,17 +27,17 @@
                 <br>
 
                 <p>Nome: </p>
-                <p>bruno</p>
+                <p>{{ nome }}</p>
                 <br>
                 <p>Email:</p>
-                <p> email aleatorio</p>
+                <p>{{ ema }}</p>
                 <br>
 
                 <p>CPF:</p>
-                <p>111.222.333-44</p>
+                <p>{{ cpf }}</p>
                 <br>
                 <p>Telefone:</p>
-                <p> +55(47)98442-4263</p>
+                <p>{{ telefone }}</p>
                 <br>
               </div>
             </div>
@@ -67,16 +67,16 @@
           <br>
           <div id="dadosdeendereco">
             <p>Pais: </p>
-            <p> Brasil</p>
+            <p>{{pais}}</p>
             <br>
             <p>Cidade:</p>
-            <p>Blumenau</p>
+            <p>{{cidade}}</p>
             <br>
             <p>CEP:</p>
-            <p>1112-3344</p>
+            <p>{{cep}}</p>
             <br>
             <p>Numero:</p>
-            <p> 55</p>
+            <p>{{numerp}}</p>
             <br>
           </div>
         </div>
@@ -99,13 +99,15 @@ export default {
 
 
     return {
-      dados_endereco: true,
-      dados_pessoal: false,
-    }
+      nome: this.$route.params.toSendDice[0],
+      ema: this.$route.params.toSendDice[1],
+      cpf: this.$route.params.toSendDice[2],
+      telefone: this.$route.params.toSendDice[3],
+      
+      }
   },
   methods: {
     endereco: function () {
-
       let endereco = document.getElementById("enderecom")
       let modal = document.getElementById("myModal")
 
@@ -129,14 +131,9 @@ export default {
     open: function () {
       let modal = document.getElementById("myModal")
       modal.style.display = "block";
-      this.$watch(
-        () => this.$router.params,
-        () => {
-          this.fetchData();
-        },
-        { immediate: true }
-      );
-      console.log(this.$route.params)
+      
+      
+     
     },
     close: function () {
       let modal = document.getElementById("myModal")

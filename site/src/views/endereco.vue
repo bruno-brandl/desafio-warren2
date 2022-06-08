@@ -1,7 +1,7 @@
 <template>
   <div class="principal">
     <nav-endereco />
-    <Border-navgation/>
+    <Border-navgation />
     <div id="contents">
 
       <div id="photo">
@@ -47,7 +47,7 @@
 
             <div id="button">
 
-              <modal-final/>
+              <modal-final v-on:click="finalizar" />
             </div>
           </form>
 
@@ -70,7 +70,7 @@ export default {
     NavEndereco,
     ModalFinal,
     BorderNavgation,
-    
+
   },
   data() {
     return {
@@ -84,34 +84,30 @@ export default {
 
   },
   methods: {
+    created() {
+      this.$watch(
+        () => this.$route.params,
+        () => {
+          this.fetchData();
+        },
+        { immediate: true }
+      );
+    },
 
     finalizar: function (modal) {
-   
-        if (this.pais != null) {
-        let modal = document.getElementById(modal);
-        
-        if (typeof modal == 'undefined' || modal === null)
-          return;
 
-        modal.style.display = 'Block';
-        document.body.style.overflow = 'hidden';
-
-      }
-
-      function closeModal(mn) {
-        let modal = document.getElementById(mn);
-
-        if (typeof modal == 'undefined' || modal === null)
-          return;
-
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        var EnderecoValidate = [
+          this.pais,
+          this.cidade,
+          this.cep,
+          this.endereco,
+          this.numero,
+        ];
+          this.$router.push({params:{EnderecoValidate}})
       }
     }
 
-  },
-
-}
+  }
 </script>
 
 <style scoped>
@@ -121,8 +117,8 @@ export default {
 
 .principal {
   margin-right: 204px;
-  
-  }
+
+}
 
 #texts {
   margin-right: -14px;
@@ -228,5 +224,4 @@ input {
   margin-right: 71px;
 
 }
-
 </style>

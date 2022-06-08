@@ -33,6 +33,13 @@ export default {
 };
 </script>
 <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 footer {
   background-color: rgb(94, 88, 91);
   height: 20%;

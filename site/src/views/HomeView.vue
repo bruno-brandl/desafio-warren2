@@ -14,56 +14,56 @@
       </div>
     </section>
     <div class="texts">
-    <div id="texto1">
-      <div id="divMain">
-        <div id="mainContents1">
-          <div id="mainPhoto1">
-            <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
+      <div id="texto1">
+        <div id="divMain">
+          <div id="mainContents1">
+            <div id="mainPhoto1">
+              <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
+            </div>
+
+            <div id="mainText1">
+              <h2 id="mainTitle1">Loren Ipsum</h2>
+              <p class="mainText1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                veritatis aut consequuntur iste dolore pariatur, quia, perferendis
+                doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
+                dolor veritatis unde nulla magni.
+              </p>
+              <div id="mainButton1">
+                <input type="button" value="Button" class="mainButton1" />
+              </div>
+            </div>
           </div>
 
-          <div id="mainText1">
-            <h2 id="mainTitle1">Loren Ipsum</h2>
-            <p class="mainText1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-              veritatis aut consequuntur iste dolore pariatur, quia, perferendis
-              doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
-              dolor veritatis unde nulla magni.
-            </p>
-            <div id="mainButton1">
-              <input type="button" value="Button" class="mainButton1" />
+        </div>
+
+        <div id='texto2'>
+          <div id="mainContents2">
+            <div id="mainPhoto2">
+              <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
+            </div>
+
+            <div id="mainText2">
+              <h2 id="mainTitle2">Loren Ipsum</h2>
+              <p class="mainText2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                veritatis aut consequuntur iste dolore pariatur, quia, perferendis
+                doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
+                dolor veritatis unde nulla magni.
+              </p>
+              <div id="mainButton2">
+                <input type="button" value="Button" class="mainButton2" />
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-
-      <div id='texto2'>
-        <div id="mainContents2">
-          <div id="mainPhoto2">
-            <img src="../assets/wa.jpg" id="mainPhoto2" width="120px" alt="" />
-          </div>
-
-          <div id="mainText2">
-            <h2 id="mainTitle2">Loren Ipsum</h2>
-            <p class="mainText2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-              veritatis aut consequuntur iste dolore pariatur, quia, perferendis
-              doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
-              dolor veritatis unde nulla magni.
-            </p>
-            <div id="mainButton2">
-              <input type="button" value="Button" class="mainButton2" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     </div>
     <div id="invista">
       <invista />
     </div>
 
-    <footer-home/>
+    <footer-home />
   </div>
 
 
@@ -81,7 +81,7 @@ export default {
     navBar,
     invista,
     footerHome,
-    
+
   },
 };
 
@@ -102,6 +102,7 @@ svg:hover {
   box-sizing: border-box;
   margin: 0;
   scroll-behavior: smooth;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
 
@@ -130,7 +131,7 @@ svg:hover {
   flex-direction: column;
   justify-content: space-evenly;
   margin-top: 10%;
-  margin-right: 70px;
+  margin-right: 10px;
 
 }
 
@@ -138,7 +139,6 @@ svg:hover {
   font-size: 40px;
   color: black;
   margin-bottom: 1%;
-   font-family: 'Times New Roman', Times, serif;
 }
 
 .mainText1 {
@@ -147,7 +147,6 @@ svg:hover {
   color: black;
   margin-bottom: 32px;
   border-bottom: solid 3px rgb(255, 0, 89);
-   font-family: 'Times New Roman', Times, serif;
 }
 
 #border {
@@ -197,7 +196,6 @@ svg:hover {
   font-size: 40px;
   color: black;
   margin-bottom: 1%;
-  font-family: 'Times New Roman', Times, serif;
 }
 
 .mainText2 {
@@ -206,7 +204,7 @@ svg:hover {
   color: black;
   border-bottom: solid 3px rgb(255, 0, 89);
   margin-bottom: 13px;
-   font-family: 'Times New Roman', Times, serif;
+
 }
 
 .mainButton2 {
@@ -227,31 +225,35 @@ svg:hover {
   width: 100%;
   height: 670px;
   background-color: #555555;
-  font-family: "Source Sans Pro", sans-serif;
-  padding: 100px 15%;
-  flex-direction: column;
+  padding: 110px 5%;
   display: flex;
 }
 
 .text-h-1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 52px;
   height: 56px;
   color: #ebecf3;
 }
 
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .botao2 {
   text-align: center;
-  height: 66px;
-  font-size: 40px;
+  height: 81px;
+  font-size: 28px;
   color: #ffffff;
   border-radius: 24px;
   border-style: none;
+  border-bottom-style: none;
   background-color: rgb(161, 157, 157);
   text-align: center;
   cursor: pointer;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 24px 53px;
 }
 
 .botao2:hover {
@@ -259,8 +261,9 @@ svg:hover {
   color: rgb(0, 0, 0);
   border-bottom: 2px solid rgb(233, 107, 107);
 }
-.texts{
-    height: 960px;
-    width: 100%;
+
+.texts {
+  height: 960px;
+  width: 100%;
 }
 </style>

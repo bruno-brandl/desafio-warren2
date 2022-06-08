@@ -155,7 +155,14 @@ export default ({
         alert("Por Favor Informe seu Telefone")
       }
       else if (this.cpfValidate()) {
-        this.$router.push("/endereco")
+        var toSendDice = [
+          this.nome,
+          this.ema,
+          this.cpf,
+          this.telefone,
+        ];
+
+        this.$router.push({ name: "/endereco", params:{toSendDice}})
       } else {
         alert("CPF INVALIDO")
       }
