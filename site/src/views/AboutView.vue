@@ -34,10 +34,10 @@
           <div>
             <div id="email">
 
-              <input v-model="ema" required type="text" class="mediumInput" />
+              <input v-model="ema" placeholder="Seu Email" required type="text" class="mediumInput" />
 
 
-              <input v-model="ema2" required type="email" class="mediumInput paddingInput" />
+              <input v-model="ema2" placeholder="Confirme seu Email" required type="email" class="mediumInput paddingInput" />
 
             </div>
           </div>
@@ -48,7 +48,7 @@
           <div id="numbers">
             <input v-maska="'###.###.###-##'" v-model="cpf" maxlength="14" required placeholder='     Seu CPF'
               type="text" class="mediumInput" />
-            <input v-maska="'(##) #####-#####'" type="text" v-model="telefone" autocomplete="off" required
+            <input v-maska="'(##) #####-#####'" placeholder="Seu Numero de Celular" type="text" v-model="telefone" autocomplete="off" required
               maxlength="15" minlength="14" class="mediumInput paddingInput" />
           </div>
           <label>Data de nascimento</label>
@@ -65,7 +65,7 @@
             <label>Email e SMS</label>
           </div>
           <div id="mensageApp">
-            <input type="checkbox" />
+            <input v-on:click="Whatsapp" type="checkbox" />
             <label>Whatsapp</label>
           </div>
         </form>
@@ -112,7 +112,10 @@ export default ({
 
     }
   },
-  methods: {
+  methods: {  
+    Whatsapp(){
+      alert("Você será Notificado pelo seu Whatsapp")
+    },
 
     cpfValidate() {
       let firstDigitAfterDash = 0
@@ -161,7 +164,7 @@ export default ({
           this.cpf,
           this.telefone,
         ];
-
+        
         this.$router.push({ name: "/endereco", params:{toSendDice}})
       } else {
         alert("CPF INVALIDO")
@@ -192,11 +195,11 @@ input[type="number"] {
 }
 
 .photo {
-  height: 150%;
+  height: 115%;
   width: 418px;
   position: absolute;
   right: 0px;
-  top: 74px;
+  top: 72px;
 
 }
 

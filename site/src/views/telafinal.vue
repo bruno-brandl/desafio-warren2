@@ -28,7 +28,7 @@ export default {
 
 img {
   margin-top: 85px;
-  margin-left: 624px;
+  margin-left: 647px;
   width: 204px;
 
 

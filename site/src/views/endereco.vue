@@ -45,13 +45,8 @@
 
 
 
-            <div id="button">
-
-              <modal-final v-on:click="finalizar" />
-            </div>
+              <ModalFinal/>
           </form>
-
-
         </div>
       </div>
     </div>
@@ -75,8 +70,8 @@ export default {
   data() {
     return {
       pais: '',
-      cidade: "",
-      cep: "",
+      cidade: '',
+      cep: '',
       endereco: '',
       numero: '',
 
@@ -84,30 +79,20 @@ export default {
 
   },
   methods: {
-    created() {
-      this.$watch(
-        () => this.$route.params,
-        () => {
-          this.fetchData();
-        },
-        { immediate: true }
-      );
-    },
 
-    finalizar: function (modal) {
+    finalizar() {
 
-        var EnderecoValidate = [
-          this.pais,
-          this.cidade,
-          this.cep,
-          this.endereco,
-          this.numero,
-        ];
-          this.$router.push({params:{EnderecoValidate}})
-      }
+      var EnderecoValidate = [
+        this.pais,
+        this.cidade,
+        this.cep,
+        this.numero,
+      ];
+      this.$router.push({params:{EnderecoValidate}})
     }
-
   }
+
+}
 </script>
 
 <style scoped>
@@ -130,12 +115,11 @@ export default {
 }
 
 .photo {
-  height: 125vh;
+  height: 119%;
   width: 428px;
   position: absolute;
   right: 0px;
-  top: 90px;
-
+  top: 88px;
 }
 
 #contents {

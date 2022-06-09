@@ -53,6 +53,7 @@ footer {
   width: 100ch;
   font-size: 23px;
   display: flex;
+  margin: 3%;
   justify-content: space-evenly;
 }
 

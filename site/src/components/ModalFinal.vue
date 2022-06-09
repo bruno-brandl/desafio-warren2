@@ -76,7 +76,7 @@
             <p>{{cep}}</p>
             <br>
             <p>Numero:</p>
-            <p>{{numerp}}</p>
+            <p>{{numero}}</p>
             <br>
           </div>
         </div>
@@ -103,6 +103,11 @@ export default {
       ema: this.$route.params.toSendDice[1],
       cpf: this.$route.params.toSendDice[2],
       telefone: this.$route.params.toSendDice[3],
+
+      pais: this.$route.params.EnderecoValidate[4],
+      cidade: this.$route.params.EnderecoValidate[5],
+      cep: this.$route.params.EnderecoValidate[6],
+      numero: this.$route.params.EnderecoValidate[7],
       
       }
   },
@@ -132,8 +137,9 @@ export default {
       let modal = document.getElementById("myModal")
       modal.style.display = "block";
       
-      
-     
+      console.log(this.nome);
+      console.log(this.ema);
+      console.log(this.$route.params.EnderecoValidate);
     },
     close: function () {
       let modal = document.getElementById("myModal")

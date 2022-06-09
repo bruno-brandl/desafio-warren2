@@ -23,7 +23,7 @@ export default {
 <style>
 .container {
   width: 100%;
-  padding: 100px;
+  padding: 58px;
   margin-top: 150px;
   display: flex;
   align-items: center;

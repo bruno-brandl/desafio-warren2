@@ -24,7 +24,8 @@
             <div id="mainText1">
               <h2 id="mainTitle1">Loren Ipsum</h2>
               <p class="mainText1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam veritatis aut consequuntur iste dolore pariatur, quia, perferendis doloremque illo quaerat voluptas. Sunt perspiciatis facilis error dolor veritatis unde nulla magni
+                lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
                 veritatis aut consequuntur iste dolore pariatur, quia, perferendis
                 doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
                 dolor veritatis unde nulla magni.
@@ -46,6 +47,7 @@
             <div id="mainText2">
               <h2 id="mainTitle2">Loren Ipsum</h2>
               <p class="mainText2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur veritatis quidem neque facere blanditiis voluptatum sunt, exercitationem, recusandae placeat mollitia pariatur. Ex voluptates repudiandae quam quidem earum esse voluptate alias?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
                 veritatis aut consequuntur iste dolore pariatur, quia, perferendis
                 doloremque illo quaerat voluptas. Sunt perspiciatis facilis error
@@ -160,11 +162,13 @@ svg:hover {
   border-radius: 30px;
   color: white;
   margin-bottom: 120px;
-  background-color: rgb(255, 20, 106);
+  background-color: rgb(32, 27, 27);
+  cursor: pointer;
 }
 
 .mainButton1:hover {
-  background-color: rgba(255, 20, 106, 0.616);
+  background-color: rgba(155, 140, 140, 0.616);
+  color: black;
 }
 
 #mainContents2 {
@@ -175,11 +179,11 @@ svg:hover {
 }
 
 #mainPhoto2 {
-  width: 60%;
-  height: 450px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 180px;
+width: 55%;
+height: 520px;
+display: flex;
+justify-content: center;
+margin-bottom: 217px; 
 }
 
 #mainText2 {
@@ -213,12 +217,14 @@ svg:hover {
   border: 0px;
   border-radius: 30px;
   color: white;
-  background-color: rgb(255, 20, 106);
-  margin-bottom: 220px;
+  margin-bottom: 120px;
+  background-color: rgb(32, 27, 27);
+  cursor: pointer;
 }
 
 .mainButton2:hover {
-  background-color: rgba(255, 20, 106, 0.616);
+  background-color: rgba(155, 140, 140, 0.616);
+  color: black;
 }
 
 .container-banner {
@@ -257,9 +263,8 @@ h1 {
 }
 
 .botao2:hover {
-  background-color: #ecd6d6;
-  color: rgb(0, 0, 0);
-  border-bottom: 2px solid rgb(233, 107, 107);
+  background-color: #898787;
+  color: rgb(255, 255, 255);
 }
 
 .texts {
