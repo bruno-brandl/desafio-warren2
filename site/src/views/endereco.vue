@@ -45,7 +45,7 @@
 
 
 
-              <ModalFinal/>
+            <ModalFinal />
           </form>
         </div>
       </div>
@@ -59,6 +59,7 @@
 import NavEndereco from '../components/endereconav.vue'
 import BorderNavgation from '../components/BorderNavigation.vue'
 import ModalFinal from '../components/ModalFinal.vue'
+
 export default {
   name: 'endereco-oi',
   components: {
@@ -69,28 +70,17 @@ export default {
   },
   data() {
     return {
-      pais: '',
+      pais: '', 
       cidade: '',
       cep: '',
       endereco: '',
       numero: '',
 
+
     }
 
   },
-  methods: {
 
-    finalizar() {
-
-      var EnderecoValidate = [
-        this.pais,
-        this.cidade,
-        this.cep,
-        this.numero,
-      ];
-      this.$router.push({params:{EnderecoValidate}})
-    }
-  }
 
 }
 </script>

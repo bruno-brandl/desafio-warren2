@@ -95,21 +95,11 @@
 import CadastroLogin from '../views/AboutView.vue'
 export default {
   name: "modalFinal",
-  data() {
-
-
-    return {
-      nome: this.$route.params.toSendDice[0],
+  return:{
+          nome: this.$route.params.toSendDice[0],
       ema: this.$route.params.toSendDice[1],
       cpf: this.$route.params.toSendDice[2],
       telefone: this.$route.params.toSendDice[3],
-
-      pais: this.$route.params.EnderecoValidate[4],
-      cidade: this.$route.params.EnderecoValidate[5],
-      cep: this.$route.params.EnderecoValidate[6],
-      numero: this.$route.params.EnderecoValidate[7],
-      
-      }
   },
   methods: {
     endereco: function () {
@@ -137,10 +127,7 @@ export default {
       let modal = document.getElementById("myModal")
       modal.style.display = "block";
       
-      console.log(this.nome);
-      console.log(this.ema);
-      console.log(this.$route.params.EnderecoValidate);
-    },
+      },
     close: function () {
       let modal = document.getElementById("myModal")
       modal.style.display = "none";
@@ -158,7 +145,7 @@ export default {
 .modal {
   background-color: rgba(0, 0, 0, .8);
   position: fixed;
-  top: 2px;
+  top: 0px;
   left: 0;
   width: 100vw;
   height: 100vh;

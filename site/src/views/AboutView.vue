@@ -108,7 +108,7 @@ export default ({
         nome: '',
         telefone: '',
         date: "",
-      }
+        }
 
     }
   },
