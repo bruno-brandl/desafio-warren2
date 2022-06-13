@@ -92,14 +92,18 @@
 </template>
 
 <script>
+import router from '../router';
 import CadastroLogin from '../views/AboutView.vue'
 export default {
   name: "modalFinal",
-  return:{
+   data() {
+    return {
       nome: this.$route.params.toSendDice[0],
       ema: this.$route.params.toSendDice[1],
       cpf: this.$route.params.toSendDice[2],
       telefone: this.$route.params.toSendDice[3],
+      
+      }
   },
   methods: {
     endereco: function () {
@@ -108,7 +112,9 @@ export default {
 
       modal.style.display = "none";
       endereco.style.display = "block";
+    
     },
+    
     fechar: function () {
       let endereco = document.getElementById("enderecom")
       let modal = document.getElementById("myModal")
