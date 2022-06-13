@@ -96,7 +96,7 @@ import CadastroLogin from '../views/AboutView.vue'
 export default {
   name: "modalFinal",
   return:{
-          nome: this.$route.params.toSendDice[0],
+      nome: this.$route.params.toSendDice[0],
       ema: this.$route.params.toSendDice[1],
       cpf: this.$route.params.toSendDice[2],
       telefone: this.$route.params.toSendDice[3],
