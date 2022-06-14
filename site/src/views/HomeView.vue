@@ -105,8 +105,11 @@ svg:hover {
   margin: 0;
   scroll-behavior: smooth;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
+@keyframes init{
+       0%   {opacity:0%; left:-500px;}
+       100%{opacity:100%; left:0px;}
+    }
 
 #divMain {
   height: 100vh;
@@ -149,6 +152,8 @@ svg:hover {
   color: black;
   margin-bottom: 32px;
   border-bottom: solid 3px rgb(255, 0, 89);
+  animation-name: init;
+  
 }
 
 #border {
@@ -271,4 +276,5 @@ h1 {
   height: 960px;
   width: 100%;
 }
+
 </style>

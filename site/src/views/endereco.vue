@@ -43,9 +43,8 @@
             <br />
             <input v-model="numero" type="text" class="bigInput" required />
 
-
-
             <ModalFinal />
+
           </form>
         </div>
       </div>
@@ -56,9 +55,9 @@
 </template>
 
 <script>
-import NavEndereco from '../components/endereconav.vue'
+import NavEndereco from '../components/endereconav'
 import BorderNavgation from '../components/BorderNavigation.vue'
-import ModalFinal from '../components/ModalFinal.vue'
+import ModalFinal from '../components/ModalFinal'
 
 export default {
   name: 'endereco-oi',
@@ -75,13 +74,8 @@ export default {
       cep: '',
       endereco: '',
       numero: '',
-
-
     }
-
   },
-
-
 }
 </script>
 

@@ -70,13 +70,13 @@
             <p>{{pais}}</p>
             <br>
             <p>Cidade:</p>
-            <p>{{cidade}}</p>
+            <p>{{ this.cidade }}</p>
             <br>
             <p>CEP:</p>
-            <p>{{cep}}</p>
+            <p>{{ this.cep }}</p>
             <br>
             <p>Numero:</p>
-            <p>{{numero}}</p>
+            <p>{{this.numero }}</p>
             <br>
           </div>
         </div>
@@ -96,14 +96,15 @@ import router from '../router';
 import CadastroLogin from '../views/AboutView.vue'
 export default {
   name: "modalFinal",
-   data() {
+  data() {
     return {
-      nome: this.$route.params.toSendDice[0],
-      ema: this.$route.params.toSendDice[1],
-      cpf: this.$route.params.toSendDice[2],
-      telefone: this.$route.params.toSendDice[3],
-      
-      }
+      nome: this.$route.params.DadosPessoaise[0],
+      ema: this.$route.params.DadosPessoais[1],
+      cpf: this.$route.params.DadosPessoais[2],
+      telefone: this.$route.params.DadosPessoais[3],
+      pais: router.endereco.pais
+
+    }
   },
   methods: {
     endereco: function () {
@@ -112,9 +113,9 @@ export default {
 
       modal.style.display = "none";
       endereco.style.display = "block";
-    
+
     },
-    
+
     fechar: function () {
       let endereco = document.getElementById("enderecom")
       let modal = document.getElementById("myModal")
@@ -130,10 +131,21 @@ export default {
       endereco.style.display = "none";
     },
     open: function () {
+      if(this.pais == null){
+          alert("sda")
+      }
       let modal = document.getElementById("myModal")
       modal.style.display = "block";
-      
-      },
+      var toSendDice = [
+        this.pais,
+        this.cidade,
+        this.cep,
+        this.numero,
+
+      ];
+      this.$router.push({name: "/endereco", params: { toSendDice } })
+
+    },
     close: function () {
       let modal = document.getElementById("myModal")
       modal.style.display = "none";
