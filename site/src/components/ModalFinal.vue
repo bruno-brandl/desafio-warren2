@@ -1,7 +1,7 @@
 <template>
   <div id="principal">
-    <button v-on:click="open" class="btn">Conntinuar</button>
-    <div v-show="dados_pessoal" class="modal" id="myModal">
+    
+    <div class="modal" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
 
@@ -9,7 +9,6 @@
           <div class="modal-header">
 
           </div>
-
 
           <div class="modal-body">
 
@@ -67,7 +66,7 @@
           <br>
           <div id="dadosdeendereco">
             <p>Pais: </p>
-            <p>{{pais}}</p>
+            <p>{{this.data_dados.pais}}</p>
             <br>
             <p>Cidade:</p>
             <p>{{cidade}}</p>
@@ -92,8 +91,6 @@
 </template>
 
 <script>
-import router from '../router';
-import CadastroLogin from '../views/AboutView.vue'
 export default {
   name: "modalFinal",
    data() {
@@ -114,6 +111,11 @@ export default {
       endereco.style.display = "block";
     
     },
+    props:{
+      data_dados:{
+        type:Object
+      },
+    },
     
     fechar: function () {
       let endereco = document.getElementById("enderecom")
@@ -129,11 +131,6 @@ export default {
       modal.style.display = "block";
       endereco.style.display = "none";
     },
-    open: function () {
-      let modal = document.getElementById("myModal")
-      modal.style.display = "block";
-      
-      },
     close: function () {
       let modal = document.getElementById("myModal")
       modal.style.display = "none";
@@ -155,7 +152,6 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: none;
 
 }
 
