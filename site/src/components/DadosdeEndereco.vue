@@ -1,6 +1,6 @@
 <template>
     <div class="principal">
-    
+
         <div id="contents">
 
             <div id="photo">
@@ -42,7 +42,7 @@
                         <br />
                         <input v-model="dadosdb.numero" type="text" class="bigInput" required />
                         <br>
-                        <button v-on:click="verificacao" class="btn">Conntinuar</button>          
+                        <button v-on:click="verificacao" class="btn">Conntinuar</button>
                     </form>
                 </div>
             </div>
@@ -57,25 +57,21 @@
 export default {
     data() {
         return {
-            dadosdb:{
-            pais: '',
-            cidade: '',
-            cep: '',
-            endereco: '',
-            numero: '',
+            dadosdb: {
+                pais: '',
+                cidade: '',
+                cep: '',
+                endereco: '',
+                numero: '',
             }
         }
-        
+
     },
     methods: {
-        verificacao(){
-            if (this.dadosdb.pais == ""){
-                    alert("Error")
-            } else{
-                this.$emit("dados", this.dadosdb)
-            }
+        verificacao() {
+        this.$emit("dados", this.dadosdb)
         }
-    
+
     },
 }
 </script>
@@ -107,20 +103,20 @@ export default {
 }
 
 .btn {
-  font-size: 20px;
-  padding: 11px 55px;
-  border: 0px;
-  border-radius: 3px;
-  color: white;
-  background-color: rgb(255, 20, 106);
-  cursor: pointer;
-  border-bottom: solid 2px #ff0054;
-  margin-left: 10px;
+    font-size: 20px;
+    padding: 11px 55px;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(255, 20, 106);
+    cursor: pointer;
+    border-bottom: solid 2px #ff0054;
+    margin-left: 10px;
 
 }
 
 .btn:hover {
-  background-color: rgba(255, 20, 106, 0.616);
+    background-color: rgba(255, 20, 106, 0.616);
 }
 
 #contents {

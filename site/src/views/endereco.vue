@@ -3,7 +3,7 @@
     <nav-endereco />
     <Border-navgation />
     <DadosdeEndereco @dados="TrasferenciaDeDados"/>
-    <ModalFinal />
+    <ModalFinal v-show="openModal" :data_dados="ArmazenamentoDeDados" />
   </div>
 
 
@@ -18,7 +18,8 @@ import DadosdeEndereco from '../components/DadosdeEndereco.vue'
 export default {
   data() {
     return {
-      ArmazenamentoDeDadoS:{}
+      ArmazenamentoDeDados:{},
+      openModal: false
     }
   },
   name: 'endereco-oi',
@@ -31,6 +32,7 @@ export default {
   methods: {
     TrasferenciaDeDados(value){
        this.ArmazenamentoDeDados = value
+       this.openModal = true
 
     }
   },

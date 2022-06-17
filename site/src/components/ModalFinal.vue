@@ -37,7 +37,7 @@
                 <br>
                 <p>Telefone:</p>
                 <p>{{ telefone }}</p>
-                <br>
+                <br> 
               </div>
             </div>
           </div>
@@ -69,13 +69,13 @@
             <p>{{this.data_dados.pais}}</p>
             <br>
             <p>Cidade:</p>
-            <p>{{cidade}}</p>
+            <p>{{this.data_dados.cidade}}</p>
             <br>
             <p>CEP:</p>
-            <p>{{cep}}</p>
+            <p>{{this.data_dados.cep}}</p>
             <br>
             <p>Numero:</p>
-            <p>{{numero}}</p>
+            <p>{{this.data_dados.numero}}</p>
             <br>
           </div>
         </div>
@@ -102,6 +102,12 @@ export default {
       
       }
   },
+      props:{
+      data_dados:{
+        type:Object
+      },
+    },
+    
   methods: {
     endereco: function () {
       let endereco = document.getElementById("enderecom")
@@ -111,12 +117,7 @@ export default {
       endereco.style.display = "block";
     
     },
-    props:{
-      data_dados:{
-        type:Object
-      },
-    },
-    
+
     fechar: function () {
       let endereco = document.getElementById("enderecom")
       let modal = document.getElementById("myModal")
