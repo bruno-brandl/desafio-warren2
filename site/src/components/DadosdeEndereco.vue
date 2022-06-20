@@ -42,7 +42,7 @@
                         <br />
                         <input v-model="dadosdb.numero" type="text" class="bigInput" required />
                         <br>
-                        <button v-on:click="verificacao" class="btn">Conntinuar</button>
+                        <input type="button" value="Continuar" v-on:click="verificacao" class="btn">
                     </form>
                 </div>
             </div>
@@ -69,7 +69,11 @@ export default {
     },
     methods: {
         verificacao() {
+            if(this.pais == " "){
+                alert("Informe o Pais onde vc Reside")
+            }else{
         this.$emit("dados", this.dadosdb)
+        }
         }
 
     },

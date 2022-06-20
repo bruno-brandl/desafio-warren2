@@ -63,10 +63,10 @@ History
           <div>
             <div id="email">
 
-              <input v-model="ema" required type="text" class="mediumInput" />
+              <input v-model="ema" required placeholder="...@email.com" type="text" class="mediumInput" />
 
 
-              <input v-model="ema2" required type="email" class="mediumInput paddingInput" />
+              <input v-model="ema2" required type="email" placeholder="...@email.com" class="mediumInput paddingInput" />
 
             </div>
           </div>
@@ -75,9 +75,9 @@ History
             <label>Celular</label>
           </div>
           <div id="numbers">
-            <input v-maska="'###.###.###-##'" v-model="cpf" maxlength="14" required placeholder='     Seu CPF'
+            <input v-maska="'###.###.###-##'" v-model="cpf" maxlength="14" required placeholder='000.000.000-00'
               type="text" class="mediumInput" />
-            <input v-maska="'(##) #####-#####'" type="text" v-model="telefone" autocomplete="off" required
+            <input v-maska="'(##) #####-#####'" placeholder="(00) 111111-22222" type="text" v-model="telefone" autocomplete="off" required
               maxlength="15" minlength="14" class="mediumInput paddingInput" />
           </div>
           <label>Data de nascimento</label>
@@ -179,6 +179,7 @@ export default ({
           this.ema,
           this.cpf,
           this.telefone,
+          this.date
         ];
         this.$router.push({ name: "/endereco", params:{toSendDice}})
       } else {

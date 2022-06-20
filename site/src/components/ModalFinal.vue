@@ -1,6 +1,6 @@
 <template>
   <div id="principal">
-    
+
     <div class="modal" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -24,20 +24,24 @@
                 <h2 id="title">Dados de Contato</h2>
                 <br>
                 <br>
-
+                <div id="nome_email">
                 <p>Nome: </p>
                 <p>{{ nome }}</p>
                 <br>
                 <p>Email:</p>
-                <p>{{ ema }}</p>
+                <p id="ema">{{ ema }}</p>
                 <br>
+                </div>
 
                 <p>CPF:</p>
                 <p>{{ cpf }}</p>
                 <br>
                 <p>Telefone:</p>
                 <p>{{ telefone }}</p>
-                <br> 
+                <br>
+                <p>Nascimento:</p>
+                <p>{{ date }}</p>
+                <br>
               </div>
             </div>
           </div>
@@ -66,16 +70,16 @@
           <br>
           <div id="dadosdeendereco">
             <p>Pais: </p>
-            <p>{{this.data_dados.pais}}</p>
+            <p>{{ this.data_dados.pais }}</p>
             <br>
             <p>Cidade:</p>
-            <p>{{this.data_dados.cidade}}</p>
+            <p>{{ this.data_dados.cidade }}</p>
             <br>
             <p>CEP:</p>
-            <p>{{this.data_dados.cep}}</p>
+            <p>{{ this.data_dados.cep }}</p>
             <br>
             <p>Numero:</p>
-            <p>{{this.data_dados.numero}}</p>
+            <p>{{ this.data_dados.numero }}</p>
             <br>
           </div>
         </div>
@@ -93,21 +97,22 @@
 <script>
 export default {
   name: "modalFinal",
-   data() {
+  data() {
     return {
       nome: this.$route.params.toSendDice[0],
       ema: this.$route.params.toSendDice[1],
       cpf: this.$route.params.toSendDice[2],
       telefone: this.$route.params.toSendDice[3],
-      
-      }
+      date: this.$route.params.toSendDice[4],
+
+    }
   },
-      props:{
-      data_dados:{
-        type:Object
-      },
+  props: {
+    data_dados: {
+      type: Object
     },
-    
+  },
+
   methods: {
     endereco: function () {
       let endereco = document.getElementById("enderecom")
@@ -115,7 +120,7 @@ export default {
 
       modal.style.display = "none";
       endereco.style.display = "block";
-    
+
     },
 
     fechar: function () {
@@ -155,7 +160,6 @@ export default {
   height: 100vh;
 
 }
-
 .modal-content {
   margin: 0 auto;
   margin-top: 1%;
@@ -237,7 +241,7 @@ export default {
   margin-left: 10%;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 17px;
-  display: block;
+  display: inline;
 }
 
 #border {
