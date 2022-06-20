@@ -69,11 +69,11 @@ export default {
     },
     methods: {
         verificacao() {
-            if(this.pais == " "){
+            if (this.pais == " ") {
                 alert("Informe o Pais onde vc Reside")
-            }else{
-        this.$emit("dados", this.dadosdb)
-        }
+            } else {
+                this.$emit("dados", this.dadosdb)
+            }
         }
 
     },

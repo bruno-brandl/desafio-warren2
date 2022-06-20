@@ -4,15 +4,9 @@
     <div class="modal" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
-
-
-          <div class="modal-header">
-
-          </div>
-
           <div class="modal-body">
 
-            <br>
+
             <div id="#botoes">
               <button id="dados" class="active">Dados</button>
               <button id="endereco" v-on:click="endereco">Endereço</button>
@@ -25,24 +19,30 @@
                 <br>
                 <br>
                 <div id="nome_email">
-                <p>Nome: </p>
-                <p>{{ nome }}</p>
-                <br>
-                <p>Email:</p>
-                <p id="ema">{{ ema }}</p>
-                <br>
+                  <p>Nome: </p>
+                  <p>{{ nome }}</p>
+                  <br>
+                  <br>
+                  <p>Email:</p>
+                  <p id="ema">{{ ema }}</p>
+                  <br>
                 </div>
-
+                <br>
                 <p>CPF:</p>
                 <p>{{ cpf }}</p>
+                <br>
                 <br>
                 <p>Telefone:</p>
                 <p>{{ telefone }}</p>
                 <br>
+                <br>
                 <p>Nascimento:</p>
                 <p>{{ date }}</p>
                 <br>
-              </div>
+                <div v-if="Whats == true">
+                  <p>WhatsApp</p>
+                </div>
+             </div>
             </div>
           </div>
           <div class="modal-footer">
@@ -104,7 +104,8 @@ export default {
       cpf: this.$route.params.toSendDice[2],
       telefone: this.$route.params.toSendDice[3],
       date: this.$route.params.toSendDice[4],
-
+      email: this.$route.params.toSendDice[5],
+      whats: this.$route.params.toSendDice[6],
     }
   },
   props: {
@@ -114,6 +115,7 @@ export default {
   },
 
   methods: {
+
     endereco: function () {
       let endereco = document.getElementById("enderecom")
       let modal = document.getElementById("myModal")
@@ -160,6 +162,7 @@ export default {
   height: 100vh;
 
 }
+
 .modal-content {
   margin: 0 auto;
   margin-top: 1%;
@@ -202,6 +205,7 @@ export default {
   cursor: pointer;
   border-bottom: solid 2px #ff0054;
   margin-left: 10px;
+  margin-top: 62px;
 
 }
 
@@ -218,8 +222,6 @@ export default {
   margin-left: 10px;
   background-color: black;
 }
-
-
 
 #endereco {
   font-size: 20px;
@@ -241,7 +243,7 @@ export default {
   margin-left: 10%;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 17px;
-  display: inline;
+  height: 22rem;
 }
 
 #border {

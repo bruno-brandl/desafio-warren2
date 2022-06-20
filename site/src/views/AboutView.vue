@@ -1,32 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@bruno-brandl
-bruno-brandl /
-desafio-warren2
-Public
-
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-
-    Settings
-
-desafio-warren2/site/src/views/AboutView.vue
-@bruno21637
-bruno21637 .
-Latest commit 8796ef3 5 days ago
-History
-1 contributor
-323 lines (272 sloc) 6.92 KB
 <template>
   <div>
     <router-link :to="{ path: '/endereco', query: { usuario: this.name } }"></router-link>
@@ -66,7 +37,8 @@ History
               <input v-model="ema" required placeholder="...@email.com" type="text" class="mediumInput" />
 
 
-              <input v-model="ema2" required type="email" placeholder="...@email.com" class="mediumInput paddingInput" />
+              <input v-model="ema2" required type="email" placeholder="...@email.com"
+                class="mediumInput paddingInput" />
 
             </div>
           </div>
@@ -77,8 +49,8 @@ History
           <div id="numbers">
             <input v-maska="'###.###.###-##'" v-model="cpf" maxlength="14" required placeholder='000.000.000-00'
               type="text" class="mediumInput" />
-            <input v-maska="'(##) #####-#####'" placeholder="(00) 111111-22222" type="text" v-model="telefone" autocomplete="off" required
-              maxlength="15" minlength="14" class="mediumInput paddingInput" />
+            <input v-maska="'(##) #####-#####'" placeholder="(00) 111111-22222" type="text" v-model="telefone"
+              autocomplete="off" required maxlength="15" minlength="14" class="mediumInput paddingInput" />
           </div>
           <label>Data de nascimento</label>
           <br />
@@ -90,11 +62,11 @@ History
           <p class="bottonText">Mattis semper odio preretium vestibulum nulla</p>
           <br />
           <div id="sms">
-            <input type="checkbox" />
+            <input v-model="email" v-on:click="email_mansage" type="checkbox" />
             <label>Email e SMS</label>
           </div>
           <div id="mensageApp">
-            <input type="checkbox" />
+            <input v-model="whats" v-on:click="wttp_mansage" type="checkbox" />
             <label>Whatsapp</label>
           </div>
         </form>
@@ -134,10 +106,26 @@ export default ({
         nome: '',
         telefone: '',
         date: "",
+        email: false,
+        whats: false,
       }
     }
   },
   methods: {
+    email_mansage() {
+      this.email = true
+      this.whats = false
+      if (this.email == true) {
+        alert("EMAIIIL")
+      }
+    },
+    wttp_mensage() {
+      this.whats = true
+      this.email = false
+      if (this.whats == true) {
+        alert("WHATSAPP")
+      }
+    },
     cpfValidate() {
       let firstDigitAfterDash = 0
       let arrayCpf = Array.from(this.cpf.replaceAll('.', '').replace('-', ''))
@@ -173,15 +161,18 @@ export default ({
       else if (this.telefone == null) {
         alert("Por Favor Informe seu Telefone")
       }
-      else if (this.cpfValidate()) {
+      else if (this.cpfValidate() || this.whats) {
         var toSendDice = [
           this.nome,
           this.ema,
           this.cpf,
           this.telefone,
-          this.date
+          this.date,
+          this.email,
+          this.whats,
+
         ];
-        this.$router.push({ name: "/endereco", params:{toSendDice}})
+        this.$router.push({ name: "/endereco", params: { toSendDice } })
       } else {
         alert("CPF INVALIDO")
       }
@@ -194,17 +185,21 @@ export default ({
 * {
   color: black;
 }
+
 .erro {
   display: none;
   margin-bottom: 9px;
 }
+
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
 input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
+
 .photo {
   height: 150%;
   width: 418px;
@@ -212,32 +207,38 @@ input[type="number"] {
   right: 0px;
   top: 74px;
 }
+
 #contents {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 84px;
 }
+
 #centralBox {
   height: 800px;
   width: 1161px;
   display: flex;
   flex-direction: column;
 }
+
 #form1 {
   z-index: 0;
   right: -450;
 }
+
 input {
   margin-bottom: 20px;
   margin-top: 0px;
 }
+
 .title {
   border-left: solid 6px rgb(255, 0, 85);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: black;
   font-size: 39px;
 }
+
 .bigInput {
   height: 40px;
   width: 528px;
@@ -245,6 +246,7 @@ input {
   font-size: 20px;
   border: solid 2px black;
 }
+
 .mediumInput {
   height: 40px;
   width: 230px;
@@ -254,43 +256,52 @@ input {
   display: flex;
   flex-direction: row-reverse;
 }
+
 #labelEmail {
   display: flex;
   justify-content: space-between;
   width: 410px;
 }
+
 #email {
   display: flex;
   justify-content: flex-start;
 }
+
 #labelNumbers {
   display: flex;
   justify-content: space-between;
   width: 340px;
 }
+
 #numbers {
   display: flex;
   justify-content: flex-start;
 }
+
 #logradouro2 {
   display: flex;
   justify-content: flex-start;
 }
+
 .paddingInput {
   margin-left: 56px;
 }
+
 #sms {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 120px;
 }
+
 #mensageApp {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100px;
 }
+
 .btn {
   font-size: 23px;
   padding: 14px 112px;
@@ -304,10 +315,12 @@ input {
   margin-top: -6 px;
   margin-left: 22px;
 }
+
 .btn:hover {
   background-color: rgba(255, 20, 106, 0.616);
   border: solid 2px black;
 }
+
 #form2 {
   left: 450px;
 }
