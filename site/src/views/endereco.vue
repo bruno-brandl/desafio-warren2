@@ -30,6 +30,7 @@ export default {
     DadosdeEndereco
   },
   methods: {
+    
     TrasferenciaDeDados(value){
        this.ArmazenamentoDeDados = value
        this.openModal = true

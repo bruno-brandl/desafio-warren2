@@ -14,7 +14,7 @@ export default {
 </script>
 <style scoped>
 h1 {
-  margin-left: 624px;
+  margin-left: 1%;
 }
 
 button {
@@ -25,8 +25,8 @@ button {
   color: white;
   background-color: rgb(25, 25, 25);
   cursor: pointer;
-  margin-left: 517px;
-  margin-top: 19px;
+  margin-left: 1%;
+
 
 }
 
@@ -35,7 +35,7 @@ button:hover {
 }
 
 p {
-  margin-left: 550px;
+  margin-left: 1%;
   margin-top: 7px;
 }
 </style>

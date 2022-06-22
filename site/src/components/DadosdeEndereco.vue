@@ -35,11 +35,12 @@
                             <label>Endereço</label>
                         </div>
                         <div id="numbers">
-                            <input v-model="dadosdb.cep" v-maska="'########'" type="text" class="mediumInput" required />
+                            <input v-model="dadosdb.cep" v-maska="'########'" type="text" class="mediumInput"
+                                required />
                             <input v-model="dadosdb.endereco" type="text" class="mediumInput paddingInput" required />
                         </div>
                         <label>Numero</label>
-                        <br/>
+                        <br />
                         <input v-model="dadosdb.numero" v-maska="'########'" type="text" class="bigInput" required />
                         <br>
                         <input type="button" value="Continuar" v-on:click="verificacao" class="btn">
@@ -69,11 +70,8 @@ export default {
     },
     methods: {
         verificacao() {
-            if (this.pais == " ") {
-                alert("Informe o Pais onde vc Reside")
-            } else {
-                this.$emit("dados", this.dadosdb)
-            }
+              this.$emit("dados", this.dadosdb)
+            
         }
 
     },

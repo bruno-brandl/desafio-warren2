@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <img src="../assets/ok.png">
     <final />
   </div>
@@ -27,10 +27,8 @@ export default {
 }
 
 img {
-  margin-top: 85px;
-  margin-left: 647px;
+  margin-left: 1%;
   width: 204px;
-
-
+  margin-top: 10%;
 }
 </style>

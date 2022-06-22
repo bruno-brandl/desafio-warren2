@@ -45,7 +45,7 @@ export default {
   background-color: #f03079;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  width: 1579px;
+  width: 100%;
 }
 
 

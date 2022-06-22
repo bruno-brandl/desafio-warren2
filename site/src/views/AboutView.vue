@@ -160,7 +160,7 @@ export default ({
         alert("Por Favor Informe seu Telefone")
       }
       else if (this.cpfValidate() || this.whats) {
-        var toSendDice = [
+        var Dados_enviados = [
           this.nome,
           this.ema,
           this.cpf,
@@ -170,7 +170,7 @@ export default ({
           this.whats,
 
         ];
-        this.$router.push({ name: "/endereco", params: { toSendDice } })
+        this.$router.push({ name: "/endereco", params: { Dados_enviados } })
       } else {
         alert("CPF INVALIDO")
       }

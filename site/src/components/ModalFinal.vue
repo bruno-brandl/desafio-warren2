@@ -20,14 +20,21 @@
                 <div id="nome_email">
                   <p>Nome: </p>
                   <p>{{ nome }}</p>
-                  <br>
-                  <p>{{email}}</p>
-                  <p v-show="whatsapp"></p>
-                  <br/>
+                  <br />
                   <p>Email:</p>
                   <p id="ema">{{ ema }}</p>
                   <br>
                 </div>
+                <div v-if="(email == true)" class="containt-icon-mssg">
+                  <span class="email">E-mail</span>
+                    <i id="email" class="fa-solid fa-envelope"></i>
+                
+                </div>
+                <div v-else-if="(whats == true)" class="containt-icon-mssg">
+                 <span>Whatsapp</span>
+                  <i  id="zap" class="fa-brands fa-whatsapp"></i>
+                </div>
+
                 <br>
                 <p>CPF:</p>
                 <p>{{ cpf }}</p>
@@ -38,10 +45,8 @@
                 <p>Nascimento:</p>
                 <p>{{ date }}</p>
                 <br>
-                <div v-show="wttp">
-                  <p>WhatsApp</p>
-                </div>
-             </div>
+
+              </div>
             </div>
           </div>
           <div class="modal-footer">
@@ -98,14 +103,14 @@ export default {
   name: "modalFinal",
   data() {
     return {
-      nome: this.$route.params.toSendDice[0],
-      ema: this.$route.params.toSendDice[1],
-      cpf: this.$route.params.toSendDice[2],
-      telefone: this.$route.params.toSendDice[3],
-      date: this.$route.params.toSendDice[4],
-      email: this.$route.params.toSendDice[5],
-      whats: this.$route.params.toSendDice[6],
-      
+      nome: this.$route.params.Dados_enviados[0],
+      ema: this.$route.params.Dados_enviados[1],
+      cpf: this.$route.params.Dados_enviados[2],
+      telefone: this.$route.params.Dados_enviados[3],
+      date: this.$route.params.Dados_enviados[4],
+      email: this.$route.params.Dados_enviados[5],
+      whats: this.$route.params.Dados_enviados[6],
+
     }
   },
   props: {
@@ -222,6 +227,17 @@ export default {
   margin-left: 10px;
   background-color: black;
 }
+#email {
+  margin-left: 63%;
+}
+#zap{
+  margin-left: 63%;
+}
+
+span {
+  margin-left: 63%;
+  margin-top: 12%;
+}
 
 #endereco {
   font-size: 20px;
@@ -243,7 +259,7 @@ export default {
   margin-left: 10%;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 17px;
-  height: 22rem;
+  height: 25rem;
 }
 
 #border {
