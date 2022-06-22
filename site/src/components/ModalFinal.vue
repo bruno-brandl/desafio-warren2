@@ -17,12 +17,13 @@
               <div id="informacoes">
                 <h2 id="title">Dados de Contato</h2>
                 <br>
-                <br>
                 <div id="nome_email">
                   <p>Nome: </p>
                   <p>{{ nome }}</p>
                   <br>
-                  <br>
+                  <p>{{email}}</p>
+                  <p v-show="whatsapp"></p>
+                  <br/>
                   <p>Email:</p>
                   <p id="ema">{{ ema }}</p>
                   <br>
@@ -31,15 +32,13 @@
                 <p>CPF:</p>
                 <p>{{ cpf }}</p>
                 <br>
-                <br>
                 <p>Telefone:</p>
                 <p>{{ telefone }}</p>
-                <br>
                 <br>
                 <p>Nascimento:</p>
                 <p>{{ date }}</p>
                 <br>
-                <div v-if="Whats == true">
+                <div v-show="wttp">
                   <p>WhatsApp</p>
                 </div>
              </div>
@@ -106,6 +105,7 @@ export default {
       date: this.$route.params.toSendDice[4],
       email: this.$route.params.toSendDice[5],
       whats: this.$route.params.toSendDice[6],
+      
     }
   },
   props: {

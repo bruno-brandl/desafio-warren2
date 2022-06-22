@@ -35,12 +35,12 @@
                             <label>Endereço</label>
                         </div>
                         <div id="numbers">
-                            <input v-model="dadosdb.cep" type="text" class="mediumInput" required />
+                            <input v-model="dadosdb.cep" v-maska="'########'" type="text" class="mediumInput" required />
                             <input v-model="dadosdb.endereco" type="text" class="mediumInput paddingInput" required />
                         </div>
                         <label>Numero</label>
-                        <br />
-                        <input v-model="dadosdb.numero" type="text" class="bigInput" required />
+                        <br/>
+                        <input v-model="dadosdb.numero" v-maska="'########'" type="text" class="bigInput" required />
                         <br>
                         <input type="button" value="Continuar" v-on:click="verificacao" class="btn">
                     </form>

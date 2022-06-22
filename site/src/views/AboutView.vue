@@ -114,14 +114,12 @@ export default ({
   methods: {
     email_mansage() {
       this.email = true
-      this.whats = false
       if (this.email == true) {
         alert("EMAIIIL")
       }
     },
-    wttp_mensage() {
+    wttp_mansage() {
       this.whats = true
-      this.email = false
       if (this.whats == true) {
         alert("WHATSAPP")
       }

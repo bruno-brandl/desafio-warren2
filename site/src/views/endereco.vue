@@ -33,6 +33,7 @@ export default {
     TrasferenciaDeDados(value){
        this.ArmazenamentoDeDados = value
        this.openModal = true
+       
     }
   },
 }
