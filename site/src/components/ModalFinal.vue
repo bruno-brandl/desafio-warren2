@@ -27,12 +27,14 @@
                 </div>
                 <div v-if="(email == true)" class="containt-icon-mssg">
                   <span class="email">E-mail</span>
-                    <i id="email" class="fa-solid fa-envelope"></i>
-                
+                  <br>
+                  <i id="email" class="fa-solid fa-envelope"></i>
+
                 </div>
                 <div v-else-if="(whats == true)" class="containt-icon-mssg">
-                 <span>Whatsapp</span>
-                  <i  id="zap" class="fa-brands fa-whatsapp"></i>
+                  <span>Whatsapp</span>
+                  <br>
+                  <i id="zap" class="fa-brands fa-whatsapp"></i>
                 </div>
 
                 <br>
@@ -227,17 +229,6 @@ export default {
   margin-left: 10px;
   background-color: black;
 }
-#email {
-  margin-left: 63%;
-}
-#zap{
-  margin-left: 63%;
-}
-
-span {
-  margin-left: 63%;
-  margin-top: 12%;
-}
 
 #endereco {
   font-size: 20px;
@@ -247,7 +238,6 @@ span {
   color: rgb(0, 0, 0);
   cursor: pointer;
   margin-left: 10px;
-
 }
 
 #endereco:hover {
