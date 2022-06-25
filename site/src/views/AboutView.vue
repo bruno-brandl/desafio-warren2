@@ -115,13 +115,13 @@ export default ({
     email_mansage() {
       this.email = true
       if (this.email == true) {
-        alert("EMAIIIL")
+        alert("Você Receberá aas Notficações por Email")
       }
     },
     wttp_mansage() {
       this.whats = true
       if (this.whats == true) {
-        alert("WHATSAPP")
+        alert("Você Receberá aas Notficações por WhatsApp")
       }
     },
     cpfValidate() {

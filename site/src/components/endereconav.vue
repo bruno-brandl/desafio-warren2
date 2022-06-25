@@ -27,7 +27,6 @@ export default {
 .text {
   cursor: pointer;
   margin-left: 411px;
-
 }
 
 .logo {
@@ -47,10 +46,6 @@ export default {
   padding-bottom: 1rem;
   width: 100%;
 }
-
-
-
-
 .nav-container {
   font-family: 'Source Sans Pro', sans-serif;
   justify-content: center;

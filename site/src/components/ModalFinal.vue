@@ -151,12 +151,9 @@ export default {
       modal.style.display = "none";
     },
 
-
   }
 
 };
-
-
 </script>
 
 <style scoped>
@@ -167,9 +164,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-
 }
-
 .modal-content {
   margin: 0 auto;
   margin-top: 1%;
@@ -179,13 +174,10 @@ export default {
   box-shadow: 0 0 2px #fff;
   border-radius: 25px
 }
-
-
 .modal-body {
   padding: 64px;
   height: 500px;
 }
-
 .btn-danger {
   font-size: 20px;
   padding: 11px 55px;
@@ -197,11 +189,9 @@ export default {
   margin-left: 38px;
   margin-top: -7px;
 }
-
 .btn-danger:hover {
   background-color: rgb(117, 111, 111);
 }
-
 .btn {
   font-size: 20px;
   padding: 11px 55px;
@@ -273,7 +263,6 @@ export default {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, .8);
-
 }
 
 .modal-content2 {
@@ -288,8 +277,6 @@ export default {
 
 #dadosdeendereco {
   margin-left: 60px;
-
-
 }
 
 .btndados {
@@ -300,7 +287,6 @@ export default {
   color: rgb(0, 0, 0);
   cursor: pointer;
   margin-left: 10px;
-
 }
 
 .btndados:hover {

@@ -12,6 +12,7 @@ export default {
   name: 'BorderNavgation'
 }
 </script>
+
 <style scoped>
 .animation-linhas {
   width: 46%;
