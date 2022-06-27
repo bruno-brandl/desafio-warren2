@@ -20,7 +20,7 @@
               <a href="#">Link 3</a>
             </div>
           </div>
-          <a class="menu" href="#texto1">Aprenda</a>
+          <router-link to="ListPage"> <a class="menu" href="#texto1">Aprenda</a></router-link>
           <a class="menu" href="#texto2">Visite</a>
           <a class="menu" href="#invista">Invista</a>
           <router-link to="/CadastroLogin"> <a class="botao" href="#">Login</a></router-link>
